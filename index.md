@@ -1,4 +1,4 @@
-# Hi, I'm Innocent Zivare 👋
+# Hi, I'm Innocent Zivare 
 
 🎓 Cybersecurity Diploma Student | 📍TelOne Centre for Learning, Zimbabwe  
 🔐 Passionate about Ethical Hacking, Network Security & Threat Detection  
