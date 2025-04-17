@@ -11,88 +11,169 @@
     html {
       scroll-behavior: smooth;
     }
+    .fade-enter {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .fade-enter-active {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-exit-active {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .neon-button {
+      color: #00f0ff;
+      border: 1px solid #00f0ff;
+      padding: 0.4rem 1rem;
+      border-radius: 0.375rem;
+      background-color: transparent;
+      transition: all 0.3s;
+      box-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff;
+    }
+    .neon-button:hover {
+      background-color: #00f0ff;
+      color: #000;
+      box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+    }
+    .neon-icon {
+      color: #00f0ff;
+      transition: all 0.3s;
+      text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff;
+    }
+    .neon-icon:hover {
+      text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
+    }
   </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
   <header class="text-center py-10">
     <h1 class="text-4xl font-bold">Innocent Zivare</h1>
-    <p class="text-lg text-gray-400 mt-2">Cybersecurity Student</p>
-    <div class="flex justify-center space-x-6 mt-4">
-      <a href="mailto:inno5o@outlook.com" target="_blank" class="text-gray-400 hover:text-blue-400"><i class="fas fa-envelope text-2xl"></i></a>
-      <a href="https://www.linkedin.com/in/inno5o" target="_blank" class="text-gray-400 hover:text-blue-400"><i class="fab fa-linkedin text-2xl"></i></a>
-      <a href="https://github.com/inno50" target="_blank" class="text-gray-400 hover:text-blue-400"><i class="fab fa-github text-2xl"></i></a>
-    </div>
-    <nav class="mt-6 space-x-4 animate-fade-in">
-      <a href="#home" class="text-sm text-blue-400 hover:underline">Home</a>
-      <a href="#education" class="text-sm text-blue-400 hover:underline">Education</a>
-      <a href="#projects" class="text-sm text-blue-400 hover:underline">Projects</a>
-      <a href="#experience" class="text-sm text-blue-400 hover:underline">Experience</a>
-      <a href="#resume" class="text-sm text-blue-400 hover:underline">Resume</a>
+    <p class="text-lg text-gray-400 mt-4">Cybersecurity Student</p>
+    <nav class="mt-10 space-x-4">
+      <button onclick="showSection('home')" class="neon-button text-sm">Home</button>
+      <button onclick="showSection('education')" class="neon-button text-sm">Education</button>
+      <button onclick="showSection('projects')" class="neon-button text-sm">Projects</button>
+      <button onclick="showSection('experience')" class="neon-button text-sm">Experience</button>
+      <button onclick="showSection('resume')" class="neon-button text-sm">Resume</button>
     </nav>
   </header>
 
-  <section id="home" class="max-w-4xl mx-auto px-4">
-    <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">About Me</h2>
-    <p class="text-gray-300">
-      I am a cybersecurity student passionate about securing digital infrastructures. Currently I am studying; network 
-      engineering through the CCNA (Cisco Certified Network Associate), python programming and working on some projects.
-    </p>
-
-    <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mt-10 mb-6">Quick Stats</h2>
-    <div class="grid grid-cols-2 gap-6 text-center">
-      <div class="bg-gray-800 p-4 rounded-xl transform transition duration-300 hover:scale-105">
-        <p class="text-3xl font-bold">0</p>
-        <p class="text-gray-400 mt-1">Months of Experience</p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded-xl transform transition duration-300 hover:scale-105">
-        <p class="text-3xl font-bold">0</p>
-        <p class="text-gray-400 mt-1">Projects Completed</p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded-xl transform transition duration-300 hover:scale-105">
-        <p class="text-3xl font-bold">1</p>
-        <p class="text-gray-400 mt-1">Projects Started</p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded-xl transform transition duration-300 hover:scale-105">
-        <p class="text-3xl font-bold">4</p>
-        <p class="text-gray-400 mt-1">Interviews Experienced</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="education" class="max-w-4xl mx-auto px-4 mt-16">
-    <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Education</h2>
-    <p class="text-gray-300">Cybersecurity Diploma – TelOne Centre For Learning 2023 - now.</p>
-  </section>
-
-  <section id="projects" class="max-w-4xl mx-auto px-4 mt-16">
-    <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Projects</h2>
-    <div class="bg-gray-800 p-6 rounded-xl shadow-md">
-      <h3 class="text-xl font-bold">Blockchain Voting System</h3>
-      <p class="mt-2 text-gray-400">
-        A secure, tamper-proof electronic voting platform using blockchain technology, developed on Raspberry Pi with Python.
+  <main class="max-w-4xl mx-auto px-4">
+    <section id="home" class="section fade-enter-active">
+      <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">About Me</h2>
+      <p class="text-gray-300">
+        I am a Cybersecurity Student passionate about securing digital infrastructures. Currently I am studying; network engineering
+        through the CCNA (Cisco Certified Network Associate), python programming and working on projects.
       </p>
-      <div class="flex flex-wrap gap-3 mt-4">
-        <span class="bg-gray-700 text-sm px-3 py-1 rounded-full">Python</span>
-        <span class="bg-gray-700 text-sm px-3 py-1 rounded-full">Raspberry Pi</span>
+
+      <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mt-10 mb-6">Quick Stats</h2>
+      <div class="grid grid-cols-2 gap-6 text-center mb-12">
+        <div class="bg-gray-800 p-4 rounded-xl transform transition duration-300 hover:scale-105">
+          <p id="monthsExperience" class="text-3xl font-bold">0</p>
+          <p class="text-gray-400 mt-1">Months of Experience</p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-xl transform transition duration-300 hover:scale-105">
+          <p id="projectsCompleted" class="text-3xl font-bold">0</p>
+          <p class="text-gray-400 mt-1">Projects Completed</p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-xl transform transition duration-300 hover:scale-105">
+          <p id="projectsStarted" class="text-3xl font-bold">0</p>
+          <p class="text-gray-400 mt-1">Projects Started</p>
+        </div>
+        <div class="bg-gray-800 p-4 rounded-xl transform transition duration-300 hover:scale-105">
+          <p id="interviewsExperienced" class="text-3xl font-bold">0</p>
+          <p class="text-gray-400 mt-1">Interviews Experienced</p>
+        </div>
       </div>
-    </div>
-    <div class="mt-6">
-      <a href="#" class="inline-block bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 mt-4 rounded-md transition">View Other Projects</a>
-    </div>
-  </section>
+    </section>
 
-  <section id="experience" class="max-w-4xl mx-auto px-4 mt-16">
-    <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Experience</h2>
-    <p class="text-gray-300">Current seeking internships.</p>
-  </section>
+    <section id="education" class="section hidden mt-16">
+      <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Education</h2>
+      <div class="space-y-6">
+        <div class="bg-gray-800 p-5 rounded-xl shadow">
+          <h3 class="text-xl font-bold">Sandringham High School</h3>
+          <p class="text-gray-300">O'level - 9 Passes</p>
+          <p class="text-gray-400 text-sm">2019</p>
+        </div>
+        <div class="bg-gray-800 p-5 rounded-xl shadow">
+          <h3 class="text-xl font-bold">TelOne Centre For Learning</h3>
+          <p class="text-gray-300">Diploma in Cybersecurity</p>
+          <p class="text-gray-400 text-sm">Expected Completion: November 2025</p>
+        </div>
+      </div>
+    </section>
 
-  <section id="resume" class="max-w-4xl mx-auto px-4 mt-16">
-    <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Resume</h2>
-    <p class="text-gray-400">Available upon request. Please contact me through email or LinkedIn.</p>
-  </section>
+    <section id="projects" class="section hidden mt-16">Will be updated soon.</section>
+    <section id="experience" class="section hidden mt-16">Will be updated soon.</section>
+    <section id="resume" class="section hidden mt-16">Will be updated soon.</section>
+  </main>
 
-  <footer class="text-center text-gray-500 text-sm mt-20 mb-6">
+  <div class="flex justify-center space-x-10 mt-10 mb-6">
+    <a href="mailto:your-email@outlook.com" target="_blank" class="neon-icon"><i class="fas fa-envelope text-2xl"></i></a>
+    <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="neon-icon"><i class="fab fa-linkedin text-2xl"></i></a>
+    <a href="https://github.com/your-github" target="_blank" class="neon-icon"><i class="fab fa-github text-2xl"></i></a>
+  </div>
+
+  <footer class="text-center text-gray-500 text-sm mb-6">
     © 2025 Innocent Zivare.
   </footer>
+
+  <script>
+    let currentSection = document.getElementById('home');
+
+    function showSection(sectionId) {
+      const newSection = document.getElementById(sectionId);
+      if (currentSection === newSection) return;
+
+      currentSection.classList.remove('fade-enter-active');
+      currentSection.classList.add('fade-exit-active');
+
+      setTimeout(() => {
+        currentSection.classList.add('hidden');
+        currentSection.classList.remove('fade-exit-active');
+
+        newSection.classList.remove('hidden');
+        newSection.classList.add('fade-enter');
+
+        setTimeout(() => {
+          newSection.classList.remove('fade-enter');
+          newSection.classList.add('fade-enter-active');
+          currentSection = newSection;
+
+          if (sectionId === 'home') animateCounters();
+        }, 10);
+      }, 400);
+    }
+
+    function animateCounter(id, start, end, duration) {
+      let range = end - start;
+      let stepTime = Math.abs(Math.floor(duration / range));
+      let current = start;
+      let increment = end > start ? 1 : -1;
+      let obj = document.getElementById(id);
+      let timer = setInterval(() => {
+        current += increment;
+        obj.textContent = current;
+        if (current === end) {
+          clearInterval(timer);
+        }
+      }, stepTime);
+    }
+
+    function animateCounters() {
+      animateCounter("monthsExperience", 5, 0, 1200);
+      animateCounter("projectsCompleted", 5, 0, 1200);
+      animateCounter("projectsStarted", 0, 1, 1200);
+      animateCounter("interviewsExperienced", 0, 4, 1200);
+    }
+
+    window.onload = function () {
+      setTimeout(animateCounters, 800);
+    };
+  </script>
 </body>
 </html>
