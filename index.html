@@ -3,10 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Innocent Zivare | Cybersecurity Portfolio</title>
+  <title>inno5o | Cybersecurity Portfolio</title>
+
+  <!-- TailwindCSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="icon" href="https://www.svgrepo.com/show/474217/shield-check.svg">
+
+  <!-- FontAwesome Icons -->
   <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/js/all.min.js" crossorigin="anonymous"></script>
+
   <style>
     html {
       scroll-behavior: smooth;
@@ -49,10 +53,14 @@
     }
   </style>
 </head>
+
 <body class="bg-gray-900 text-white font-sans">
+
+  <!-- HEADER -->
   <header class="text-center py-10">
     <h1 class="text-4xl font-bold">Innocent Zivare</h1>
     <p class="text-lg text-gray-400 mt-4">Cybersecurity Student</p>
+
     <nav class="mt-10 space-x-4">
       <button onclick="showSection('home')" class="neon-button text-sm">Home</button>
       <button onclick="showSection('education')" class="neon-button text-sm">Education</button>
@@ -62,66 +70,98 @@
     </nav>
   </header>
 
+  <!-- MAIN -->
   <main class="max-w-4xl mx-auto px-4">
+
+    <!-- HOME -->
     <section id="home" class="section fade-enter-active">
       <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">About Me</h2>
-      <p class="text-gray-300">
-        I am a Cybersecurity Student passionate about securing digital infrastructures. Currently I am studying; network engineering
-        through the CCNA (Cisco Certified Network Associate), python programming and working on projects.
+      <p class="text-gray-300 mb-10">
+        I am a Cybersecurity Student passionate about securing digital infrastructures.
+        Currently I am studying; network engineering through the CCNA (Cisco Certified Network Associate), python programming and working on projects.
       </p>
 
-      <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mt-10 mb-6">Quick Stats</h2>
+      <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Quick Stats</h2>
       <div class="grid grid-cols-2 gap-6 text-center mb-12">
-        <div class="bg-gray-800 p-4 rounded-xl transform transition duration-300 hover:scale-105">
+        <div class="bg-gray-800 p-4 rounded-xl hover:scale-105 transition-transform">
           <p id="monthsExperience" class="text-3xl font-bold">0</p>
-          <p class="text-gray-400 mt-1">Months of Experience</p>
+          <p class="text-gray-400">Months of Experience</p>
         </div>
-        <div class="bg-gray-800 p-4 rounded-xl transform transition duration-300 hover:scale-105">
+        <div class="bg-gray-800 p-4 rounded-xl hover:scale-105 transition-transform">
           <p id="projectsCompleted" class="text-3xl font-bold">0</p>
-          <p class="text-gray-400 mt-1">Projects Completed</p>
+          <p class="text-gray-400">Projects Completed</p>
         </div>
-        <div class="bg-gray-800 p-4 rounded-xl transform transition duration-300 hover:scale-105">
+        <div class="bg-gray-800 p-4 rounded-xl hover:scale-105 transition-transform">
           <p id="projectsStarted" class="text-3xl font-bold">0</p>
-          <p class="text-gray-400 mt-1">Projects Started</p>
+          <p class="text-gray-400">Projects Started</p>
         </div>
-        <div class="bg-gray-800 p-4 rounded-xl transform transition duration-300 hover:scale-105">
+        <div class="bg-gray-800 p-4 rounded-xl hover:scale-105 transition-transform">
           <p id="interviewsExperienced" class="text-3xl font-bold">0</p>
-          <p class="text-gray-400 mt-1">Interviews Experienced</p>
+          <p class="text-gray-400">Skills</p>
         </div>
       </div>
     </section>
 
+    <!-- EDUCATION -->
     <section id="education" class="section hidden mt-16">
-      <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Education</h2>
-      <div class="space-y-6">
-        <div class="bg-gray-800 p-5 rounded-xl shadow">
-          <h3 class="text-xl font-bold">Sandringham High School</h3>
-          <p class="text-gray-300">O'level - 9 Passes</p>
-          <p class="text-gray-400 text-sm">2019</p>
-        </div>
-        <div class="bg-gray-800 p-5 rounded-xl shadow">
-          <h3 class="text-xl font-bold">TelOne Centre For Learning</h3>
-          <p class="text-gray-300">Diploma in Cybersecurity</p>
-          <p class="text-gray-400 text-sm">Expected Completion: November 2025</p>
+  <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Education</h2>
+  <div class="flex items-center bg-gray-800 p-5 rounded-xl space-x-6">
+    <img src="TCFL Portfo.png" alt="TelOne College Logo" class="w-20 h-20 object-cover rounded-full">
+    <div>
+      <h3 class="text-xl font-bold">TelOne Centre for Learning</h3>
+      <p class="text-gray-300">Diploma in Cybersecurity</p>
+      <p class="text-gray-400 text-sm">Expected Completion: 2025</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section hidden mt-16">
+      <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Projects</h2>
+      <div class="bg-gray-800 p-5 rounded-xl">
+        <h3 class="text-xl font-bold">Blockchain Voting System</h3>
+        <p class="text-gray-300 mt-2">A secure and transparent electronic voting platform using blockchain technology, Python, Raspberry Pi, and DBMS.</p>
+        <img src="path/to/blockchain-voting-image.png" alt="Blockchain Voting System" class="rounded-xl mt-6 mb-4">
+        <a href="#" class="neon-button text-sm">View Project</a>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section hidden mt-16">
+      <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Experience</h2>
+      <div class="flex items-center bg-gray-800 p-5 rounded-xl space-x-6">
+        <img src="MSU.jpg" alt="Company Logo" class="w-20 h-20 object-cover rounded-full">
+        <div>
+          <h3 class="text-xl font-bold">Network Technician Intern</h3>
+          <p class="text-gray-300">Working at the Midlands State University. 
+            Gaining hands-on experience supporting Campus Area Network.
+            Assisting with troubleshooting, basic network maintenance and connectivity setup across multiple departments.</p>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="section hidden mt-16">Will be updated soon.</section>
-    <section id="experience" class="section hidden mt-16">Will be updated soon.</section>
-    <section id="resume" class="section hidden mt-16">Will be updated soon.</section>
+    <!-- RESUME -->
+    <section id="resume" class="section hidden mt-16">
+      <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Resume</h2>
+      <p class="text-gray-300">Available on request. Please contact me via Email or LinkedIn.</p>
+    </section>
+
   </main>
 
+  <!-- SOCIAL ICONS -->
   <div class="flex justify-center space-x-10 mt-10 mb-6">
     <a href="mailto:your-email@outlook.com" target="_blank" class="neon-icon"><i class="fas fa-envelope text-2xl"></i></a>
-    <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" class="neon-icon"><i class="fab fa-linkedin text-2xl"></i></a>
+    <a href="https://linkedin.com/in/your-linkedin" target="_blank" class="neon-icon"><i class="fab fa-linkedin text-2xl"></i></a>
     <a href="https://github.com/your-github" target="_blank" class="neon-icon"><i class="fab fa-github text-2xl"></i></a>
   </div>
 
+  <!-- FOOTER -->
   <footer class="text-center text-gray-500 text-sm mb-6">
-    © 2025 Innocent Zivare.
+    © 2025 Innocent Zivare
   </footer>
 
+  <!-- SCRIPT -->
   <script>
     let currentSection = document.getElementById('home');
 
@@ -143,9 +183,9 @@
           newSection.classList.remove('fade-enter');
           newSection.classList.add('fade-enter-active');
           currentSection = newSection;
-
-          if (sectionId === 'home') animateCounters();
         }, 10);
+
+        if (sectionId === 'home') animateCounters();
       }, 400);
     }
 
@@ -165,9 +205,9 @@
     }
 
     function animateCounters() {
-      animateCounter("monthsExperience", 5, 0, 1200);
-      animateCounter("projectsCompleted", 5, 0, 1200);
-      animateCounter("projectsStarted", 0, 1, 1200);
+      animateCounter("monthsExperience", 200, 0, 1200);
+      animateCounter("projectsCompleted", 200, 0, 1200);
+      animateCounter("projectsStarted", 100, 1, 1200);
       animateCounter("interviewsExperienced", 0, 4, 1200);
     }
 
@@ -175,5 +215,6 @@
       setTimeout(animateCounters, 800);
     };
   </script>
+
 </body>
 </html>
