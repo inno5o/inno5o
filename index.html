@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>inno5o | Cybersecurity Portfolio</title>
+  <title>Innocent Zivare | Cybersecurity Student</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aptos&display=swap" rel="stylesheet">
 
   <!-- TailwindCSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -14,6 +19,7 @@
   <style>
     html {
       scroll-behavior: smooth;
+      font-family: 'Aptos', sans-serif;
     }
     .fade-enter {
       opacity: 0;
@@ -51,114 +57,305 @@
     .neon-icon:hover {
       text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff;
     }
+    .cyber-card {
+      background: rgba(0, 0, 20, 0.5);
+      border: 1px solid rgba(0, 240, 255, 0.2);
+      backdrop-filter: blur(5px);
+      transition: all 0.3s;
+    }
+    .cyber-card:hover {
+      border-color: #00f0ff;
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+      transform: translateY(-5px);
+    }
+    .circular-progress {
+      position: relative;
+      height: 120px;
+      width: 120px;
+      border-radius: 50%;
+      background: conic-gradient(#00f0ff 0deg, #0a192f 0deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 1s ease;
+    }
+    .circular-progress::before {
+      content: "";
+      position: absolute;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background-color: #0a192f;
+    }
+    .progress-value {
+      position: relative;
+      font-size: 28px;
+      font-weight: 600;
+      color: #00f0ff;
+    }
+    .skill-name {
+      margin-top: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #ccd6f6;
+      text-align: center;
+    }
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 15px;
+    }
   </style>
 </head>
 
-<body class="bg-gray-900 text-white font-sans">
-
+<body class="bg-gray-900 text-white min-h-screen">
   <!-- HEADER -->
-  <header class="text-center py-10">
-    <h1 class="text-4xl font-bold">Innocent Zivare</h1>
-    <p class="text-lg text-gray-400 mt-4">Cybersecurity Student</p>
+  <header class="text-center py-12">
+    <h1 class="text-5xl font-bold mb-2" style="color: #00f0ff; text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);">Innocent Zivare</h1>
+    <p class="text-xl text-gray-400 mb-6">Cybersecurity Student</p>
 
     <nav class="mt-10 space-x-4">
       <button onclick="showSection('home')" class="neon-button text-sm">Home</button>
-      <button onclick="showSection('education')" class="neon-button text-sm">Education</button>
+      <button onclick="showSection('skills')" class="neon-button text-sm">Skills</button>
       <button onclick="showSection('projects')" class="neon-button text-sm">Projects</button>
-      <button onclick="showSection('experience')" class="neon-button text-sm">Experience</button>
-      <button onclick="showSection('resume')" class="neon-button text-sm">Resume</button>
+      <button onclick="showSection('certifications')" class="neon-button text-sm">Certifications</button>
+      <button onclick="showSection('contact')" class="neon-button text-sm">Contact</button>
     </nav>
   </header>
 
   <!-- MAIN -->
-  <main class="max-w-4xl mx-auto px-4">
+  <main class="max-w-5xl mx-auto px-4 pb-16">
 
     <!-- HOME -->
     <section id="home" class="section fade-enter-active">
-      <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">About Me</h2>
-      <p class="text-gray-300 mb-10">
-        I am a Cybersecurity Student passionate about securing digital infrastructures.
-        Currently I am studying; network engineering through the CCNA (Cisco Certified Network Associate), python programming and working on projects.
-      </p>
-
-      <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Quick Stats</h2>
-      <div class="grid grid-cols-2 gap-6 text-center mb-12">
-        <div class="bg-gray-800 p-4 rounded-xl hover:scale-105 transition-transform">
-          <p id="monthsExperience" class="text-3xl font-bold">0</p>
-          <p class="text-gray-400">Months of Experience</p>
+      <h2 class="text-3xl font-semibold border-b border-gray-700 pb-2 mb-8" style="color: #00f0ff;">About Me</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            A Cybersecurity student seeking intership to gain hands-on experience in the networking field. I am currently
+            working on projects and pursuing the Cisco Certified Networking Associate Certification            
+          </p>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Passionate about learning cybersecurity.
+          </p>
+          <div class="flex space-x-4">
+          
+          </div>
         </div>
-        <div class="bg-gray-800 p-4 rounded-xl hover:scale-105 transition-transform">
-          <p id="projectsCompleted" class="text-3xl font-bold">0</p>
-          <p class="text-gray-400">Projects Completed</p>
-        </div>
-        <div class="bg-gray-800 p-4 rounded-xl hover:scale-105 transition-transform">
-          <p id="projectsStarted" class="text-3xl font-bold">0</p>
-          <p class="text-gray-400">Projects Started</p>
-        </div>
-        <div class="bg-gray-800 p-4 rounded-xl hover:scale-105 transition-transform">
-          <p id="interviewsExperienced" class="text-3xl font-bold">0</p>
-          <p class="text-gray-400">Skills</p>
+        <div class="cyber-card rounded-xl p-6 self-start">
+          <h3 class="text-xl font-bold mb-4" style="color: #00f0ff;">Quick Stats</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="cyber-card p-4 rounded-lg">
+              <p id="monthsExperience" class="text-3xl font-bold text-center">0</p>
+              <p class="text-gray-400 text-center">Projects Started</p>
+            </div>
+            <div class="cyber-card p-4 rounded-lg">
+              <p id="projectsCompleted" class="text-3xl font-bold text-center">0</p>
+              <p class="text-gray-400 text-center">Projects Completed</p>
+            </div>
+            <div class="cyber-card p-4 rounded-lg">
+              <p id="cvesResearched" class="text-3xl font-bold text-center">0</p>
+              <p class="text-gray-400 text-center">Certifications Completed</p>
+            </div>
+            <div class="cyber-card p-4 rounded-lg">
+              <p id="toolsMastered" class="text-3xl font-bold text-center">0</p>
+              <p class="text-gray-400 text-center">Tools Mastered</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- EDUCATION -->
-    <section id="education" class="section hidden mt-16">
-  <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Education</h2>
-  <div class="flex items-center bg-gray-800 p-5 rounded-xl space-x-6">
-    <img src="TCFL Portfo.png" alt="TelOne College Logo" class="w-20 h-20 object-cover rounded-full">
-    <div>
-      <h3 class="text-xl font-bold">TelOne Centre for Learning</h3>
-      <p class="text-gray-300">Diploma in Cybersecurity</p>
-      <p class="text-gray-400 text-sm">Expected Completion: 2025</p>
-    </div>
-  </div>
-</section>
-
+    <!-- SKILLS -->
+    <section id="skills" class="section hidden mt-16">
+      <h2 class="text-3xl font-semibold border-b border-gray-700 pb-2 mb-8" style="color: #00f0ff;">Technical Skills</h2>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Offensive Security -->
+        <div class="cyber-card rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-6 flex items-center" style="color: #00f0ff;">
+            <i class="fas fa-shield-alt mr-2"></i> Offensive Security
+          </h3>
+          <div class="flex flex-wrap justify-center">
+            <div class="skill-item">
+              <div class="circular-progress" data-percent="10">
+                <span class="progress-value">0%</span>
+              </div>
+              <span class="skill-name">Network Security</span>
+            </div>
+            <div class="skill-item">
+              <div class="circular-progress" data-percent="1">
+                <span class="progress-value">0%</span>
+              </div>
+              <span class="skill-name">Penetration Testing</span>
+            </div>
+            <div class="skill-item">
+              <div class="circular-progress" data-percent="1">
+                <span class="progress-value">0%</span>
+              </div>
+              <span class="skill-name">Exploit Development</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Defensive Security -->
+        <div class="cyber-card rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-6 flex items-center" style="color: #00f0ff;">
+            <i class="fas fa-lock mr-2"></i> Defensive Security
+          </h3>
+          <div class="flex flex-wrap justify-center">
+            <div class="skill-item">
+              <div class="circular-progress" data-percent="5">
+                <span class="progress-value">0%</span>
+              </div>
+              <span class="skill-name">Firewall Management</span>
+            </div>
+            <div class="skill-item">
+              <div class="circular-progress" data-percent="1">
+                <span class="progress-value">0%</span>
+              </div>
+              <span class="skill-name">SIEM Implementation</span>
+            </div>
+            <div class="skill-item">
+              <div class="circular-progress" data-percent="1">
+                <span class="progress-value">0%</span>
+              </div>
+              <span class="skill-name">Firewall Management</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tools & Technologies -->
+        <div class="cyber-card rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-6 flex items-center" style="color: #00f0ff;">
+            <i class="fas fa-tools mr-2"></i> Tools & Tech
+          </h3>
+          <div class="flex flex-wrap justify-center">
+            <div class="skill-item">
+              <div class="circular-progress" data-percent="20">
+                <span class="progress-value">0%</span>
+              </div>
+              <span class="skill-name">Python, Bash, PowerShell</span>
+            </div>
+            <div class="skill-item">
+              <div class="circular-progress" data-percent="1">
+                <span class="progress-value">0%</span>
+              </div>
+              <span class="skill-name">Nmap, Wireshark</span>
+            </div>
+            <div class="skill-item">
+              <div class="circular-progress" data-percent="1">
+                <span class="progress-value">0%</span>
+              </div>
+              <span class="skill-name">Azure Security</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- PROJECTS -->
     <section id="projects" class="section hidden mt-16">
-      <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Projects</h2>
-      <div class="bg-gray-800 p-5 rounded-xl">
-        <h3 class="text-xl font-bold">Blockchain Voting System</h3>
-        <p class="text-gray-300 mt-2">A secure and transparent electronic voting platform using blockchain technology, Python, Raspberry Pi, and DBMS.</p>
-        <img src="path/to/blockchain-voting-image.png" alt="Blockchain Voting System" class="rounded-xl mt-6 mb-4">
-        <a href="#" class="neon-button text-sm">View Project</a>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section hidden mt-16">
-      <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Experience</h2>
-      <div class="flex items-center bg-gray-800 p-5 rounded-xl space-x-6">
-        <img src="MSU.jpg" alt="Company Logo" class="w-20 h-20 object-cover rounded-full">
-        <div>
-          <h3 class="text-xl font-bold">Network Technician Intern</h3>
-          <p class="text-gray-300">Working at the Midlands State University. 
-            Gaining hands-on experience supporting Campus Area Network.
-            Assisting with troubleshooting, basic network maintenance and connectivity setup across multiple departments.</p>
+      <h2 class="text-3xl font-semibold border-b border-gray-700 pb-2 mb-8" style="color: #00f0ff;">Security Projects</h2>
+      
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Blockchain Voting System -->
+        <div class="cyber-card rounded-xl p-6">
+          <div class="flex items-center mb-4">
+            <div class="bg-gray-800 p-3 rounded-lg mr-4">
+              <i class="fas fa-vote-yea text-2xl text-cyan-400"></i>
+            </div>
+            <h3 class="text-xl font-bold">Blockchain Voting System</h3>
+          </div>
+          <p class="text-gray-300 mb-4">
+            This is just a proposal I made. Nothing much has been done here.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Blockchain</span>
+            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Python</span>
+            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Security</span>
+          </div>
+          <a href="#" class="neon-button inline-block">View Details</a>
         </div>
       </div>
     </section>
 
-    <!-- RESUME -->
-    <section id="resume" class="section hidden mt-16">
-      <h2 class="text-2xl font-semibold border-b border-gray-700 pb-2 mb-6">Resume</h2>
-      <p class="text-gray-300">Available on request. Please contact me via Email or LinkedIn.</p>
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="section hidden mt-16">
+      <h2 class="text-3xl font-semibold border-b border-gray-700 pb-2 mb-8" style="color: #00f0ff;">Certifications</h2>
+      
+      <div class="space-y-6">
+        <div class="cyber-card rounded-xl p-6 flex items-start">
+          <img src="https://via.placeholder.com/80" alt="Certification Logo" class="w-20 h-20 object-contain mr-6 rounded-lg">
+          <div>
+            <h3 class="text-xl font-bold">Cisco Certified Network Associate (In Progress)</h3>
+            <p class="text-gray-300 mt-1">Expected completion: August 2025</p>
+            <p class="text-gray-400 mt-2">Fundamental networking certificate</p>
+          </div>
+        </div>
+        
+        <div class="cyber-card rounded-xl p-6 flex items-start">
+          <img src="https://via.placeholder.com/80" alt="Certification Logo" class="w-20 h-20 object-contain mr-6 rounded-lg">
+          <div>
+            <h3 class="text-xl font-bold">CPTS</h3>
+            <p class="text-gray-300 mt-1">Expected Start Date: September 2024</p>
+            <p class="text-gray-400 mt-2">I think pursuing this one next is good due to its more practical hacking experience</p>
+            <a href="#" class="neon-button inline-block mt-3">View Certificate</a>
+          </div>
+        </div>
+      </div>
     </section>
 
+    <!-- CONTACT -->
+    <section id="contact" class="section hidden mt-16">
+      <h2 class="text-3xl font-semibold border-b border-gray-700 pb-2 mb-8" style="color: #00f0ff;">Get In Touch</h2>
+      
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="cyber-card rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-4" style="color: #00f0ff;">Contact Information</h3>
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <i class="fas fa-envelope text-cyan-400 mr-4 text-xl"></i>
+              <a href="mailto:inno5o@outlook.com" class="hover:text-cyan-400 transition">Email</a>
+            </div>
+            <div class="flex items-center">
+              <i class="fab fa-linkedin text-cyan-400 mr-4 text-xl"></i>
+              <a href="https://linkedin.com/in/inno5o" target="_blank" class="hover:text-cyan-400 transition">LinkedIn</a>
+            </div>
+            <div class="flex items-center">
+              <i class="fab fa-github text-cyan-400 mr-4 text-xl"></i>
+              <a href="https://github.com/inno5o" target="_blank" class="hover:text-cyan-400 transition">GitHub</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="cyber-card rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-4" style="color: #00f0ff;">Send a Message</h3>
+          <form class="space-y-4">
+            <div>
+              <label for="name" class="block text-gray-300 mb-1">Name</label>
+              <input type="text" id="name" class="w-full bg-gray-800 border border-gray-700 rounded px-4 py-2 focus:border-cyan-400 focus:outline-none">
+            </div>
+            <div>
+              <label for="email" class="block text-gray-300 mb-1">Email</label>
+              <input type="email" id="email" class="w-full bg-gray-800 border border-gray-700 rounded px-4 py-2 focus:border-cyan-400 focus:outline-none">
+            </div>
+            <div>
+              <label for="message" class="block text-gray-300 mb-1">Message</label>
+              <textarea id="message" rows="4" class="w-full bg-gray-800 border border-gray-700 rounded px-4 py-2 focus:border-cyan-400 focus:outline-none"></textarea>
+            </div>
+            <button type="submit" class="neon-button px-6 py-2">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- SOCIAL ICONS -->
-  <div class="flex justify-center space-x-10 mt-10 mb-6">
-    <a href="mailto:inno5o@outlook.com" target="_blank" class="neon-icon"><i class="fas fa-envelope text-2xl"></i></a>
-    <a href="https://linkedin.com/in/inno5o" target="_blank" class="neon-icon"><i class="fab fa-linkedin text-2xl"></i></a>
-    <a href="https://github.com/inno5o" target="_blank" class="neon-icon"><i class="fab fa-github text-2xl"></i></a>
-  </div>
-
   <!-- FOOTER -->
-  <footer class="text-center text-gray-500 text-sm mb-6">
-    © 2025 Innocent Zivare
+  <footer class="text-center text-gray-500 text-sm py-6 border-t border-gray-800">
+    <p>© 2025 Innocent Zivare.</p>
+    <p class="mt-2">All security research conducted ethically and legally.</p>
   </footer>
 
   <!-- SCRIPT -->
@@ -186,6 +383,7 @@
         }, 10);
 
         if (sectionId === 'home') animateCounters();
+        if (sectionId === 'skills') animateCircularProgress();
       }, 400);
     }
 
@@ -204,17 +402,37 @@
       }, stepTime);
     }
 
+    function animateCircularProgress() {
+      const circularProgressElements = document.querySelectorAll(".circular-progress");
+      
+      circularProgressElements.forEach(element => {
+        const progressValue = element.querySelector(".progress-value");
+        const progressEndValue = parseInt(element.getAttribute("data-percent"));
+        const speed = 20;
+        
+        let progressStartValue = 0;
+        const progress = setInterval(() => {
+          progressStartValue++;
+          progressValue.textContent = `${progressStartValue}%`;
+          element.style.background = `conic-gradient(#00f0ff ${progressStartValue * 3.6}deg, #0a192f 0deg)`;
+          
+          if (progressStartValue === progressEndValue) {
+            clearInterval(progress);
+          }
+        }, speed);
+      });
+    }
+
     function animateCounters() {
-      animateCounter("monthsExperience", 200, 0, 1200);
+      animateCounter("monthsExperience", 0, 1, 1200);
       animateCounter("projectsCompleted", 200, 0, 1200);
-      animateCounter("projectsStarted", 100, 1, 1200);
-      animateCounter("interviewsExperienced", 0, 4, 1200);
+      animateCounter("cvesResearched", 5, 1, 1200);
+      animateCounter("toolsMastered", 100, 0, 1200);
     }
 
     window.onload = function () {
       setTimeout(animateCounters, 800);
     };
   </script>
-
 </body>
 </html>
