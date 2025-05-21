@@ -69,6 +69,23 @@
       color: #000;
       box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff; /* cyber-blue */
     }
+    /* New style for skill notes buttons */
+    .skill-note-button {
+      color: #00f0ff; /* cyber-blue */
+      border: 1px solid rgba(0, 240, 255, 0.5); /* Lighter border */
+      padding: 0.25rem 0.75rem; /* Smaller padding */
+      border-radius: 0.375rem; /* rounded-md */
+      background-color: transparent;
+      font-size: 0.75rem; /* Smaller font size */
+      transition: all 0.3s;
+      box-shadow: 0 0 3px rgba(0, 240, 255, 0.5); /* Softer shadow */
+    }
+    .skill-note-button:hover {
+      background-color: rgba(0, 240, 255, 0.2); /* Slight background on hover */
+      color: #00f0ff; /* cyber-blue */
+      box-shadow: 0 0 6px #00f0ff; /* cyber-blue */
+      border-color: #00f0ff;
+    }
     .neon-icon {
       color: #00f0ff; /* cyber-blue */
       transition: all 0.3s;
@@ -98,7 +115,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 1s ease; /* Animate the background for conic-gradient */
+      transition: background 0.05s linear; /* Faster transition for smoother conic-gradient updates */
     }
     .circular-progress::before {
       content: "";
@@ -205,12 +222,13 @@
           <h3 class="text-xl font-bold mb-6 flex items-center text-cyber-blue">
             <i class="fas fa-shield-alt mr-3"></i> Offensive Security
           </h3>
-          <div class="flex flex-wrap justify-around"> <div class="skill-item w-full sm:w-auto"> <div class="circular-progress" data-percent="20">
-                <span class="progress-value">10%</span>
+          <div class="flex flex-wrap justify-around"> 
+            <div class="skill-item w-full sm:w-auto"> 
+              <div class="circular-progress" data-percent="10"> <span class="progress-value">0%</span>
               </div>
               <span class="skill-name">Network Security</span>
-              <button type="button" class="text-cyber-blue hover:text-sky-300 transition-colors duration-200 mt-2 text-xs focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                Details <i class="fas fa-chevron-down ml-1"></i>
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
+                View Notes <i class="fas fa-chevron-down ml-1"></i>
               </button>
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">Network Security Insights:</strong>
@@ -224,11 +242,9 @@
             </div>
             
             <div class="skill-item w-full sm:w-auto">
-              <div class="circular-progress" data-percent="1">
-                <span class="progress-value">0%</span>
-              </div>
+              <div class="circular-progress" data-percent="1"> <span class="progress-value">0%</span> </div>
               <span class="skill-name">Penetration Testing</span>
-              <button type="button" class="text-cyber-blue hover:text-sky-300 transition-colors duration-200 mt-2 text-xs focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
                 View Notes <i class="fas fa-chevron-down ml-1"></i>
               </button>
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
@@ -247,7 +263,7 @@
                 <span class="progress-value">0%</span>
               </div>
               <span class="skill-name">Exploit Development</span>
-               <button type="button" class="text-cyber-blue hover:text-sky-300 transition-colors duration-200 mt-2 text-xs focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
                 View Notes <i class="fas fa-chevron-down ml-1"></i>
               </button>
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
@@ -260,7 +276,6 @@
                 </ul>
               </div>
             </div>
-
           </div>
         </div>
         
@@ -274,30 +289,49 @@
                 <span class="progress-value">0%</span>
               </div>
               <span class="skill-name">Firewall Management</span>
-              <button type="button" class="text-cyber-blue hover:text-sky-300 transition-colors duration-200 mt-2 text-xs focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
                 View Notes <i class="fas fa-chevron-down ml-1"></i>
               </button>
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
-                <strong class="font-semibold block mb-2">Exploit Development Basics:</strong>
+                <strong class="font-semibold block mb-2">Firewall Management Notes:</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
-                    <li>Theoretical understanding of concepts like buffer overflows, stack smashing.</li>
-                    <li>Introductory experience with debuggers (e.g., GDB) and disassemblers (e.g., IDA Free/Ghidra basics).</li>
-                    <li>Learning to analyze and modify existing proof-of-concept exploits for educational purposes.</li>
-                    <li>Exploring scripting for exploit automation (e.g., Python with libraries like Pwntools).</li>
+                    <li>Placeholder: Understanding of firewall rules and policies.</li>
+                    <li>Placeholder: Experience with specific firewall technologies (e.g., pfSense, Cisco ASA basics).</li>
                 </ul>
               </div>
-              </div>
+            </div>
             <div class="skill-item w-full sm:w-auto">
               <div class="circular-progress" data-percent="1">
                 <span class="progress-value">0%</span>
               </div>
               <span class="skill-name">SIEM Implementation</span>
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
+                View Notes <i class="fas fa-chevron-down ml-1"></i>
+              </button>
+              <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
+                <strong class="font-semibold block mb-2">SIEM Implementation Notes:</strong>
+                <ul class="list-disc list-inside text-sm space-y-1">
+                    <li>Placeholder: Basic understanding of SIEM concepts and benefits.</li>
+                    <li>Placeholder: Familiarity with log sources and event correlation.</li>
+                </ul>
               </div>
-            <div class="skill-item w-full sm:w-auto"> <div class="circular-progress" data-percent="1">
+            </div>
+            <div class="skill-item w-full sm:w-auto"> 
+              <div class="circular-progress" data-percent="1">
                 <span class="progress-value">0%</span>
               </div>
               <span class="skill-name">Incident Response</span>
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
+                View Notes <i class="fas fa-chevron-down ml-1"></i>
+              </button>
+              <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
+                <strong class="font-semibold block mb-2">Incident Response Notes:</strong>
+                <ul class="list-disc list-inside text-sm space-y-1">
+                    <li>Placeholder: Knowledge of incident response lifecycle (PICERL).</li>
+                    <li>Placeholder: Basic digital forensics awareness.</li>
+                </ul>
               </div>
+            </div>
           </div>
         </div>
         
@@ -307,23 +341,53 @@
           </h3>
           <div class="flex flex-wrap justify-around">
             <div class="skill-item w-full sm:w-auto">
-              <div class="circular-progress" data-percent="20">
-                <span class="progress-value">0%</span>
+              <div class="circular-progress" data-percent="25"> <span class="progress-value">0%</span>
               </div>
               <span class="skill-name">Python, Bash, PowerShell</span>
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
+                View Notes <i class="fas fa-chevron-down ml-1"></i>
+              </button>
+              <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
+                <strong class="font-semibold block mb-2">Scripting Notes:</strong>
+                <ul class="list-disc list-inside text-sm space-y-1">
+                    <li>Python: Used for automation tasks, basic network scanning scripts.</li>
+                    <li>Bash: Comfortable with command-line navigation and simple shell scripts.</li>
+                    <li>PowerShell: Basic understanding for Windows system administration tasks.</li>
+                </ul>
               </div>
+            </div>
             <div class="skill-item w-full sm:w-auto">
               <div class="circular-progress" data-percent="1">
                 <span class="progress-value">0%</span>
               </div>
               <span class="skill-name">Nmap, Wireshark</span>
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
+                View Notes <i class="fas fa-chevron-down ml-1"></i>
+              </button>
+              <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
+                <strong class="font-semibold block mb-2">Network Tools Notes:</strong>
+                <ul class="list-disc list-inside text-sm space-y-1">
+                    <li>Nmap: Proficient in various scan types, service enumeration.</li>
+                    <li>Wireshark: Experience in packet analysis for troubleshooting and security investigation.</li>
+                </ul>
               </div>
+            </div>
             <div class="skill-item w-full sm:w-auto">
               <div class="circular-progress" data-percent="1">
                 <span class="progress-value">0%</span>
               </div>
               <span class="skill-name">Azure Security</span>
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
+                View Notes <i class="fas fa-chevron-down ml-1"></i>
+              </button>
+              <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
+                <strong class="font-semibold block mb-2">Azure Security Notes:</strong>
+                <ul class="list-disc list-inside text-sm space-y-1">
+                    <li>Placeholder: Familiarity with Azure Security Center basics.</li>
+                    <li>Placeholder: Understanding of Network Security Groups (NSGs).</li>
+                </ul>
               </div>
+            </div>
           </div>
         </div>
       </div>
@@ -375,7 +439,7 @@
       
       <div class="space-y-6">
         <div class="cyber-card p-6 flex flex-col sm:flex-row items-start">
-          <img src="CCNA.jpg" alt="CCNA Certification Logo" class="w-20 h-20 object-contain mr-0 mb-4 sm:mr-6 sm:mb-0 rounded-lg border border-cyber-blue" onerror="this.src='https://placehold.co/80x80/0a192f/00f0ff?text=Cert'; this.alt='Certification Placeholder'">
+          <img src="https://placehold.co/80x80/0a192f/00f0ff?text=CCNA" alt="CCNA Certification Logo" class="w-20 h-20 object-contain mr-0 mb-4 sm:mr-6 sm:mb-0 rounded-lg border border-cyber-blue" onerror="this.src='https://placehold.co/80x80/0a192f/00f0ff?text=Cert'; this.alt='Certification Placeholder'">
           <div>
             <h3 class="text-xl font-bold text-cyber-light-text">Cisco Certified Network Associate (CCNA) - In Progress</h3>
             <p class="text-cyber-dim-text mt-1">Expected completion: August 2025</p>
@@ -384,7 +448,7 @@
         </div>
         
         <div class="cyber-card p-6 flex flex-col sm:flex-row items-start">
-          <img src="CPTS.jpg" alt="CPTS Certification Logo" class="w-20 h-20 object-contain mr-0 mb-4 sm:mr-6 sm:mb-0 rounded-lg border border-cyber-blue" onerror="this.src='https://placehold.co/80x80/0a192f/00f0ff?text=Cert'; this.alt='Certification Placeholder'">
+          <img src="https://placehold.co/80x80/0a192f/00f0ff?text=CPTS" alt="CPTS Certification Logo" class="w-20 h-20 object-contain mr-0 mb-4 sm:mr-6 sm:mb-0 rounded-lg border border-cyber-blue" onerror="this.src='https://placehold.co/80x80/0a192f/00f0ff?text=Cert'; this.alt='Certification Placeholder'">
           <div>
             <h3 class="text-xl font-bold text-cyber-light-text">Certified Penetration Testing Specialist (CPTS) - Planned</h3>
             <p class="text-cyber-dim-text mt-1">Expected Start Date: September 2025</p>
@@ -412,7 +476,7 @@
             </div>
             <div class="flex items-center">
               <i class="fab fa-github text-cyber-blue mr-4 text-xl"></i>
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="hover:text-cyber-blue transition text-cyber-light-text focusable">github.com/yourusername</a>
+              <a href="https://github.com/thatsyou" target="_blank" rel="noopener noreferrer" class="hover:text-cyber-blue transition text-cyber-light-text focusable">github.com/yourusername</a>
             </div>
           </div>
         </div>
@@ -440,7 +504,7 @@
   </main>
 
   <footer class="text-center text-cyber-dim-text text-sm py-6 border-t border-gray-800">
-    <p>&copy; <span id="currentYear">2025</span> Innocent Zivare.</p>
+    <p>&copy; <span id="currentYear">2025</span> Innocent Zivare</p>
     <p class="mt-2">All security research conducted ethically and legally.</p>
   </footer>
 
@@ -472,37 +536,43 @@
           newSection.classList.add('fade-enter-active');
           currentSection = newSection;
           
-          // Scroll to the top of the new section smoothly
-          // newSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 10); 
 
-        }, 10); // Small delay for fade-in to start
-
-        // Trigger animations if the section is now visible
         if (sectionId === 'home' && isElementInViewport(newSection)) animateCounters();
-        if (sectionId === 'skills' && isElementInViewport(newSection)) animateCircularProgress();
+        // Reset animation flag for circular progress if skills section is being shown again
+        if (sectionId === 'skills') {
+            document.querySelectorAll(".circular-progress").forEach(el => el.dataset.animated = "false");
+            if (isElementInViewport(newSection)) animateCircularProgress();
+        }
 
-      }, 400); // Duration of fade-out animation
+
+      }, 400); 
     }
 
     function animateCounter(id, start, end, duration) {
       let obj = document.getElementById(id);
-      if (!obj) return; // Element not found
+      if (!obj) return; 
+
+      // If already animated to the end value, don't re-animate
+      if (obj.dataset.animated === "true" && parseInt(obj.textContent) === end) return;
+
 
       let range = end - start;
-      // Avoid division by zero if start === end
       let stepTime = (range === 0) ? duration : Math.abs(Math.floor(duration / range)); 
-      if (stepTime === 0) stepTime = 1; // Ensure stepTime is at least 1ms
+      if (stepTime === 0) stepTime = 1; 
 
       let current = start;
       let increment = end > start ? 1 : -1;
       
-      obj.textContent = start; // Initialize with start value
+      obj.textContent = start; 
+      obj.dataset.animated = "false"; // Mark as not animated before starting
 
       let timer = setInterval(() => {
         current += increment;
         obj.textContent = current;
         if (current === end) {
           clearInterval(timer);
+          obj.dataset.animated = "true"; // Mark as animated once done
         }
       }, stepTime);
     }
@@ -511,52 +581,98 @@
       const circularProgressElements = document.querySelectorAll(".circular-progress");
       
       circularProgressElements.forEach(element => {
-        // Check if already animated to prevent re-animation on tab switch
-        if (element.dataset.animated === "true") return;
+        // This check ensures that if an animation was already completed (e.g. from a previous view),
+        // and we want to re-animate, the flag 'data-animated' should be reset by the caller (showSection)
+        if (element.dataset.animated === "true") {
+            // If it's marked as animated, ensure it's set to its final state.
+            // This handles cases where the section might be re-shown without animation reset.
+            const progressValueSpan = element.querySelector(".progress-value");
+            const progressEndValue = parseInt(element.getAttribute("data-percent"));
+            if (progressValueSpan && !isNaN(progressEndValue)) {
+                progressValueSpan.textContent = `${progressEndValue}%`;
+                element.style.background = `conic-gradient(#00f0ff ${progressEndValue * 3.6}deg, #0a192f ${progressEndValue * 3.6}deg)`;
+            }
+            return; 
+        }
 
         const progressValueSpan = element.querySelector(".progress-value");
         if (!progressValueSpan) return;
 
-        const progressEndValue = parseInt(element.getAttribute("data-percent"));
-        if (isNaN(progressEndValue)) return;
+        const progressEndValueStr = element.getAttribute("data-percent");
+        const progressEndValue = parseInt(progressEndValueStr);
 
-        const speed = 30; // Slower speed for smoother animation
+        // Handle invalid or negative percentages
+        if (isNaN(progressEndValue) || progressEndValue < 0 || progressEndValue > 100) { // Added check for > 100
+            progressValueSpan.textContent = (isNaN(progressEndValue) || progressEndValue < 0) ? "N/A" : "100%"; // Display 100% if value > 100
+            const displayAngle = (isNaN(progressEndValue) || progressEndValue < 0) ? 0 : 360; // Full circle if > 100 or 0 if N/A
+            element.style.background = `conic-gradient(#00f0ff ${displayAngle}deg, #0a192f ${displayAngle}deg)`; 
+            element.dataset.animated = "true"; // Mark as handled
+            return;
+        }
         
-        let progressStartValue = 0;
-        progressValueSpan.textContent = `${progressStartValue}%`; // Initialize text
-        element.style.background = `conic-gradient(#00f0ff ${progressStartValue * 3.6}deg, #0a192f ${progressStartValue * 3.6}deg)`;
+        // Set initial state for animation (0%)
+        progressValueSpan.textContent = `0%`;
+        element.style.background = `conic-gradient(#00f0ff 0deg, #0a192f 0deg)`;
 
+        // If target is 0%, set final state and mark as animated
+        if (progressEndValue === 0) {
+            element.dataset.animated = "true";
+            return; // Already at 0%, no animation needed
+        }
 
+        const totalAnimationTime = 1000; // Fixed duration for all animations (1 second)
+        const numberOfSteps = 50;        // Fixed number of steps for smoothness
+        const stepInterval = Math.max(1, totalAnimationTime / numberOfSteps); // Interval time per step
+
+        let currentStep = 0;
+        
         const progress = setInterval(() => {
-          progressStartValue++;
-          progressValueSpan.textContent = `${progressStartValue}%`;
-          // Corrected conic-gradient: second color starts where the first one ends
-          element.style.background = `conic-gradient(#00f0ff ${progressStartValue * 3.6}deg, #0a192f ${progressStartValue * 3.6}deg)`;
+          currentStep++;
+          let actualProgress = (progressEndValue / numberOfSteps) * currentStep;
           
-          if (progressStartValue >= progressEndValue) { // Use >= to ensure it reaches the end value
-            progressValueSpan.textContent = `${progressEndValue}%`; // Ensure final value is exact
-             element.style.background = `conic-gradient(#00f0ff ${progressEndValue * 3.6}deg, #0a192f ${progressEndValue * 3.6}deg)`;
+          // Ensure actualProgress doesn't exceed progressEndValue, especially on the last step
+          if (currentStep >= numberOfSteps) {
+            actualProgress = progressEndValue;
+          }
+
+          const displayedPercentage = Math.round(actualProgress); 
+          
+          progressValueSpan.textContent = `${Math.min(displayedPercentage, progressEndValue)}%`;
+          const angle = Math.min(actualProgress, progressEndValue) * 3.6;
+          element.style.background = `conic-gradient(#00f0ff ${angle}deg, #0a192f ${angle}deg)`;
+          
+          if (currentStep >= numberOfSteps) {
+            // Ensure final state is exactly the target percentage
+            progressValueSpan.textContent = `${progressEndValue}%`;
+            element.style.background = `conic-gradient(#00f0ff ${progressEndValue * 3.6}deg, #0a192f ${progressEndValue * 3.6}deg)`;
             clearInterval(progress);
             element.dataset.animated = "true"; // Mark as animated
           }
-        }, speed);
+        }, stepInterval);
       });
     }
 
     function animateCounters() {
-      // Check if already animated
+      if (document.getElementById('monthsExperience').dataset.animated === "true" && 
+          parseInt(document.getElementById('monthsExperience').textContent) === 3) {
+        // Example: if already animated to the target value, don't re-animate
+        // This logic can be made more generic if needed
+        // return;
+      }
+      // Reset animation flag for counters if we want them to re-animate each time 'home' is shown
+      // For now, they animate once.
       if (document.getElementById('monthsExperience').dataset.animated === "true") return;
 
-      animateCounter("monthsExperience", 0, 3, 1200); // Example: 3 projects started
-      animateCounter("projectsCompleted", 200, 1, 1200);  // Example: 1 project completed
-      animateCounter("cvesResearched", 5, 1, 1200);    // Example: 0 certs completed (as per original)
-      animateCounter("toolsMastered", 100, 0, 1200);   // Example: 5 tools mastered
 
-      // Mark as animated
-      document.getElementById('monthsExperience').dataset.animated = "true";
+      animateCounter("monthsExperience", 0, 1, 1200); 
+      animateCounter("projectsCompleted", 200, 1, 1200);  
+      animateCounter("cvesResearched", 5, 1, 1200);    
+      animateCounter("toolsMastered", 100, 0, 1200);   
+
+      // The animateCounter function itself now sets dataset.animated = "true" upon completion.
+      // So, no need to set it globally for all counters here.
     }
 
-    // Helper function to check if element is in viewport (for triggering animations)
     function isElementInViewport(el) {
         if (!el) return false;
         const rect = el.getBoundingClientRect();
@@ -568,10 +684,9 @@
         );
     }
     
-    // New function to toggle skill details
     function toggleSkillDetail(buttonElement) {
-        const detailElement = buttonElement.nextElementSibling; // Assumes .skill-detail is the next sibling
-        const iconElement = buttonElement.querySelector('i'); // The chevron icon
+        const detailElement = buttonElement.nextElementSibling; 
+        const iconElement = buttonElement.querySelector('i'); 
 
         if (!detailElement) {
             console.error("Skill detail element not found. Check HTML structure.");
@@ -588,55 +703,24 @@
             } else {
                 iconElement.classList.remove('fa-chevron-down');
                 iconElement.classList.add('fa-chevron-up');
-                // Optional: Scroll the detail into view if it's opened and partially off-screen
-                // setTimeout(() => { // Timeout to allow rendering
-                //   const rect = detailElement.getBoundingClientRect();
-                //   if (rect.bottom > window.innerHeight || rect.top < 0) {
-                //     detailElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                //   }
-                // }, 50); 
             }
         }
     }
 
-
-    // Initial setup on window load
     window.onload = function () {
       document.getElementById('currentYear').textContent = new Date().getFullYear();
-      // Initial animation for home section if it's visible
       const homeSection = document.getElementById('home');
       if (homeSection && !homeSection.classList.contains('hidden') && isElementInViewport(homeSection)) {
-          setTimeout(animateCounters, 600); // Delay to allow fade-in
+          setTimeout(animateCounters, 600); 
       }
-      // Set initial states for circular progress if skills section is initially visible (though it's hidden by default)
+      
       const skillsSection = document.getElementById('skills');
       if (skillsSection && !skillsSection.classList.contains('hidden') && isElementInViewport(skillsSection)) {
+          // Ensure animation flags are reset if skills section is visible on load (though it's hidden by default)
+          document.querySelectorAll(".circular-progress").forEach(el => el.dataset.animated = "false");
           animateCircularProgress();
       }
     };
-
-    // Add event listener for scrolling to trigger animations for sections that come into view
-    // This is more robust for animations if sections are long or user scrolls fast
-    // For simplicity with the current tabbed navigation, animations are triggered in showSection
-    // However, for a long scrolling page, this would be useful:
-    /*
-    let animationThrottle = false;
-    window.addEventListener('scroll', () => {
-        if (animationThrottle) return;
-        animationThrottle = true;
-        setTimeout(() => {
-            const homeSection = document.getElementById('home');
-            const skillsSection = document.getElementById('skills');
-            if (homeSection && !homeSection.classList.contains('hidden') && isElementInViewport(homeSection)) {
-                animateCounters();
-            }
-            if (skillsSection && !skillsSection.classList.contains('hidden') && isElementInViewport(skillsSection)) {
-                animateCircularProgress();
-            }
-            animationThrottle = false;
-        }, 200);
-    });
-    */
 
   </script>
 </body>
