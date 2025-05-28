@@ -10,8 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Aptos&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-
-  <script src="https://cdn.tailwindcss.com"></script> <script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
     tailwind.config = {
       theme: {
         extend: {
@@ -142,8 +142,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 15px;
-      padding: 10px; /* Added padding for better spacing */
+      margin: 15px; /* Adjusted margin for better spacing within cards */
+      padding: 10px; 
     }
     .skill-detail { /* Styling for the hidden notes */
       background-color: rgba(17, 24, 39, 0.7); /* Tailwind gray-900 with opacity, adjust as needed */
@@ -152,6 +152,8 @@
       color: #ccd6f6; /* cyber-light-text */
       text-align: left;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      width: 100%; /* Ensure details take full width of skill-item */
+      max-width: 280px; /* Max width for readability */
     }
     /* Custom focus style for accessibility */
     .focusable:focus-visible {
@@ -217,14 +219,13 @@
     <section id="skills" class="section hidden mt-16">
       <h2 class="text-3xl font-semibold border-b border-gray-700 pb-2 mb-8 text-cyber-blue">Technical Skills</h2>
       
-      <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
+      <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6"> 
         <div class="cyber-card p-6">
           <h3 class="text-xl font-bold mb-6 flex items-center text-cyber-blue">
-            <i class="fas fa-shield-alt mr-3"></i> Networking
+            <i class="fas fa-shield-alt mr-3"></i> Networking 
           </h3>
           <div class="flex flex-wrap justify-around"> 
-            <div class="skill-item w-full sm:w-auto"> 
-              <div class="circular-progress" data-percent="90"> <span class="progress-value">90%</span>
+            <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto"> <div class="circular-progress" data-percent="90"> <span class="progress-value">90%</span>
               </div>
               <span class="skill-name">Basics</span>
               <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
@@ -240,7 +241,7 @@
               </div>
             </div>
             
-            <div class="skill-item w-full sm:w-auto">
+            <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
               <div class="circular-progress" data-percent="80"> <span class="progress-value">80%</span> </div>
               <span class="skill-name">The Internet Protocol</span>
               <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
@@ -257,12 +258,11 @@
               </div>
             </div>
 
-            <div class="skill-item w-full sm:w-auto">
+            <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
               <div class="circular-progress" data-percent="40">
                 <span class="progress-value">40%</span>
               </div>
-              <span class="skill-name">Security, Automation and Programmability</span>
-              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
+              <span class="skill-name">Security, Automation & Prog.</span> <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
                 Details <i class="fas fa-chevron-down ml-1"></i>
               </button>
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
@@ -271,7 +271,6 @@
                     <li>Can configure and verify device access control using local passwords</li>
                     <li>Can configure and verify Layer 2 security features (DHCP snooping, dynamic ARP inspection and port security</li>
                     <li>Can configure and cerify WLAN within the GUI using WPA2 PSK</li>
-                    <li></li>
                 </ul>
               </div>
             </div>
@@ -280,10 +279,10 @@
         
         <div class="cyber-card p-6">
           <h3 class="text-xl font-bold mb-6 flex items-center text-cyber-blue">
-            <i class="fas fa-lock mr-3"></i> Linux
+            <i class="fas fa-terminal mr-3"></i> Linux 
           </h3>
           <div class="flex flex-wrap justify-around">
-            <div class="skill-item w-full sm:w-auto">
+            <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
               <div class="circular-progress" data-percent="90">
                 <span class="progress-value">90%</span>
               </div>
@@ -302,9 +301,8 @@
                 </ul>
               </div>
             </div>
-            <div class="skill-item w-full sm:w-auto">
-              <div class="circular-progress" data-percent="1">
-                <span class="progress-value">10%</span>
+            <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
+              <div class="circular-progress" data-percent="10"> <span class="progress-value">10%</span>
               </div>
               <span class="skill-name">Intermediate User Tasks</span>
               <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
@@ -320,7 +318,7 @@
                 </ul>
               </div>
             </div>
-            <div class="skill-item w-full sm:w-auto"> 
+            <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto"> 
               <div class="circular-progress" data-percent="10">
                 <span class="progress-value">10%</span>
               </div>
@@ -342,11 +340,11 @@
         
         <div class="cyber-card p-6">
           <h3 class="text-xl font-bold mb-6 flex items-center text-cyber-blue">
-            <i class="fas fa-tools mr-3"></i> Python Programming
+            <i class="fab fa-python mr-3"></i> Python Programming
           </h3>
           <div class="flex flex-wrap justify-around">
-            <div class="skill-item w-full sm:w-auto">
-              <div class="circular-progress" data-percent="25"> <span class="progress-value">80%</span>
+            <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
+              <div class="circular-progress" data-percent="80"> <span class="progress-value">80%</span>
               </div>
               <span class="skill-name">Core Syntax</span>
               <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
@@ -361,9 +359,8 @@
                 </ul>
               </div>
             </div>
-            <div class="skill-item w-full sm:w-auto">
-              <div class="circular-progress" data-percent="1">
-                <span class="progress-value">10%</span>
+            <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
+              <div class="circular-progress" data-percent="10"> <span class="progress-value">10%</span>
               </div>
               <span class="skill-name">Intermediate</span>
               <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
@@ -379,9 +376,8 @@
                 </ul>
               </div>
             </div>
-            <div class="skill-item w-full sm:w-auto">
-              <div class="circular-progress" data-percent="1">
-                <span class="progress-value">10%</span>
+            <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
+              <div class="circular-progress" data-percent="10"> <span class="progress-value">10%</span>
               </div>
               <span class="skill-name">Scripting for Networking & Automation</span>
               <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
@@ -398,17 +394,99 @@
             </div>
           </div>
         </div>
+
+        <div class="cyber-card p-6">
+            <h3 class="text-xl font-bold mb-6 flex items-center text-cyber-blue">
+              <i class="fas fa-user-secret mr-3"></i> Ethical Hacking
+            </h3>
+            <div class="flex flex-wrap justify-around">
+              <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
+                <div class="circular-progress" data-percent="20"> <span class="progress-value">20%</span></div>
+                <span class="skill-name">Reconnaissance</span>
+                <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
+                  Details <i class="fas fa-chevron-down ml-1"></i>
+                </button>
+                <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
+                  <strong class="font-semibold block mb-2">Tools & Techniques:</strong>
+                  <ul class="list-disc list-inside text-sm space-y-1">
+                      <li>Nmap (basic scans)</li>
+                      <li>WHOIS lookups</li>
+                      <li>Google Dorking</li>
+                      <li>Sublist3r / Amass (basics)</li>
+                      <li>TheHarvester (basics)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
+                <div class="circular-progress" data-percent="15"> <span class="progress-value">15%</span></div>
+                <span class="skill-name">Scanning</span>
+                <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
+                  Details <i class="fas fa-chevron-down ml-1"></i>
+                </button>
+                <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
+                  <strong class="font-semibold block mb-2">Tools & Techniques:</strong>
+                  <ul class="list-disc list-inside text-sm space-y-1">
+                      <li>Nmap (port scanning, service detection)</li>
+                      <li>Vulnerability Scanners (e.g., OpenVAS/Nessus - conceptual)</li>
+                      <li>Enum4linux (basic enumeration)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
+                <div class="circular-progress" data-percent="10"> <span class="progress-value">10%</span></div>
+                <span class="skill-name">Gaining Access</span>
+                <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
+                  Details <i class="fas fa-chevron-down ml-1"></i>
+                </button>
+                <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
+                  <strong class="font-semibold block mb-2">Concepts & Tools:</strong>
+                  <ul class="list-disc list-inside text-sm space-y-1">
+                      <li>Metasploit Framework (conceptual understanding)</li>
+                      <li>Password Cracking (e.g., John the Ripper, Hashcat - conceptual)</li>
+                      <li>Exploiting common misconfigurations</li>
+                  </ul>
+                </div>
+              </div>
+               <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
+                <div class="circular-progress" data-percent="5"> <span class="progress-value">5%</span></div>
+                <span class="skill-name">Maintaining Access</span>
+                <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
+                  Details <i class="fas fa-chevron-down ml-1"></i>
+                </button>
+                <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
+                  <strong class="font-semibold block mb-2">Concepts:</strong>
+                  <ul class="list-disc list-inside text-sm space-y-1">
+                      <li>Persistence techniques (conceptual)</li>
+                      <li>Privilege escalation (conceptual)</li>
+                  </ul>
+                </div>
+              </div>
+               <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
+                <div class="circular-progress" data-percent="5"> <span class="progress-value">5%</span></div>
+                <span class="skill-name">Covering Tracks</span>
+                <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
+                  Details <i class="fas fa-chevron-down ml-1"></i>
+                </button>
+                <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
+                  <strong class="font-semibold block mb-2">Concepts:</strong>
+                  <ul class="list-disc list-inside text-sm space-y-1">
+                      <li>Log clearing/manipulation (conceptual)</li>
+                      <li>Using proxies/VPNs (conceptual)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
       </div>
     </section>
 
     <section id="projects" class="section hidden mt-16">
       <h2 class="text-3xl font-semibold border-b border-gray-700 pb-2 mb-8 text-cyber-blue">Network Security Projects</h2>
       
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="cyber-card p-6">
+      <div class="grid md:grid-cols-1 gap-6"> <div class="cyber-card p-6">
           <div class="flex items-center mb-4">
             <div class="bg-gray-800 p-3 rounded-lg mr-4">
-              <i class="fas fa-vote-yea text-2xl text-cyber-blue"></i>
+              <i class="fas fa-search-location text-2xl text-cyber-blue"></i>
             </div>
             <h3 class="text-xl font-bold text-cyber-light-text">Network Monitoring Tool</h3>
           </div>
@@ -423,23 +501,7 @@
           </div>
           <a href="#" class="neon-button inline-block text-sm focusable">View Details</a>
         </div>
-        <div class="cyber-card p-6">
-          <div class="flex items-center mb-4">
-            <div class="bg-gray-800 p-3 rounded-lg mr-4">
-              <i class="fas fa-key text-2xl text-cyber-blue"></i>
-            </div>
-            <h3 class="text-xl font-bold text-cyber-light-text">Password Complexity Checker</h3>
-          </div>
-          <p class="text-cyber-dim-text mb-4">
-            A tool developed in Python to assess password strength based on various criteria like length, character types, and common patterns.
-          </p>
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text">Python</span>
-            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text">Security Best Practices</span>
-          </div>
-          <a href="#" class="neon-button inline-block text-sm focusable">View Details</a>
         </div>
-      </div>
     </section>
 
     <section id="certifications" class="section hidden mt-16">
@@ -475,15 +537,13 @@
             </div>
             <div class="flex items-center">
               <i class="fab fa-github text-cyber-blue mr-4 text-xl"></i>
-              <a href="https://github.com/thatsyou" target="_blank" rel="noopener noreferrer" class="hover:text-cyber-blue transition text-cyber-light-text focusable">github</a>
-            </div>
+              <a href="https://github.com/thatsyou" target="_blank" rel="noopener noreferrer" class="hover:text-cyber-blue transition text-cyber-light-text focusable">github</a> </div>
           </div>
         </div>
         
         <div class="cyber-card p-6">
           <h3 class="text-xl font-bold mb-6 text-cyber-blue">Send a Message</h3>
-          <form class="space-y-4">
-            <div>
+          <form class="space-y-4" action="https://formspree.io/f/YOUR_UNIQUE_FORM_ID" method="POST"> <div>
               <label for="name" class="block text-cyber-dim-text mb-1 text-sm">Name</label>
               <input type="text" id="name" name="name" class="w-full bg-gray-800 border border-gray-700 rounded px-4 py-2 focus:border-cyber-blue focus:outline-none focus:ring-1 focus:ring-cyber-blue text-cyber-light-text focusable">
             </div>
@@ -538,10 +598,12 @@
         }, 10); 
 
         if (sectionId === 'home' && isElementInViewport(newSection)) animateCounters();
-        // Reset animation flag for circular progress if skills section is being shown again
+        
         if (sectionId === 'skills') {
-            document.querySelectorAll(".circular-progress").forEach(el => el.dataset.animated = "false");
-            if (isElementInViewport(newSection)) animateCircularProgress();
+            document.querySelectorAll(".circular-progress").forEach(el => el.dataset.animated = "false"); // Reset animation flag
+            if (isElementInViewport(newSection)) { // Check if section is in viewport before animating
+                 setTimeout(animateCircularProgress, 50); // Add a slight delay for fade-in
+            }
         }
 
 
@@ -552,9 +614,7 @@
       let obj = document.getElementById(id);
       if (!obj) return; 
 
-      // If already animated to the end value, don't re-animate
       if (obj.dataset.animated === "true" && parseInt(obj.textContent) === end) return;
-
 
       let range = end - start;
       let stepTime = (range === 0) ? duration : Math.abs(Math.floor(duration / range)); 
@@ -564,122 +624,49 @@
       let increment = end > start ? 1 : -1;
       
       obj.textContent = start; 
-      obj.dataset.animated = "false"; // Mark as not animated before starting
+      obj.dataset.animated = "false"; 
 
       let timer = setInterval(() => {
         current += increment;
         obj.textContent = current;
         if (current === end) {
           clearInterval(timer);
-          obj.dataset.animated = "true"; // Mark as animated once done
+          obj.dataset.animated = "true"; 
         }
       }, stepTime);
     }
 
-    function animateCircularProgress() {
-      const circularProgressElements = document.querySelectorAll(".circular-progress");
-      
-      circularProgressElements.forEach(element => {
-        // This check ensures that if an animation was already completed (e.g. from a previous view),
-        // and we want to re-animate, the flag 'data-animated' should be reset by the caller (showSection)
-        if (element.dataset.animated === "true") {
-            // If it's marked as animated, ensure it's set to its final state.
-            // This handles cases where the section might be re-shown without animation reset.
-            const progressValueSpan = element.querySelector(".progress-value");
-            const progressEndValue = parseInt(element.getAttribute("data-percent"));
-            if (progressValueSpan && !isNaN(progressEndValue)) {
-                progressValueSpan.textContent = `${progressEndValue}%`;
-                element.style.background = `conic-gradient(#00f0ff ${progressEndValue * 3.6}deg, #0a192f ${progressEndValue * 3.6}deg)`;
-            }
-            return; 
-        }
-
-        const progressValueSpan = element.querySelector(".progress-value");
-        if (!progressValueSpan) return;
-
-        const progressEndValueStr = element.getAttribute("data-percent");
-        const progressEndValue = parseInt(progressEndValueStr);
-
-        // Handle invalid or negative percentages
-        if (isNaN(progressEndValue) || progressEndValue < 0 || progressEndValue > 100) { // Added check for > 100
-            progressValueSpan.textContent = (isNaN(progressEndValue) || progressEndValue < 0) ? "N/A" : "100%"; // Display 100% if value > 100
-            const displayAngle = (isNaN(progressEndValue) || progressEndValue < 0) ? 0 : 360; // Full circle if > 100 or 0 if N/A
-            element.style.background = `conic-gradient(#00f0ff ${displayAngle}deg, #0a192f ${displayAngle}deg)`; 
-            element.dataset.animated = "true"; // Mark as handled
-            return;
-        }
-        
-        // Set initial state for animation (0%)
-        progressValueSpan.textContent = `0%`;
-        element.style.background = `conic-gradient(#00f0ff 0deg, #0a192f 0deg)`;
-
-        // If target is 0%, set final state and mark as animated
-        if (progressEndValue === 0) {
-            element.dataset.animated = "true";
-            return; // Already at 0%, no animation needed
-        }
-
-        const totalAnimationTime = 1000; // Fixed duration for all animations (1 second)
-        const numberOfSteps = 50;        // Fixed number of steps for smoothness
-        const stepInterval = Math.max(1, totalAnimationTime / numberOfSteps); // Interval time per step
-
-        let currentStep = 0;
-        
-        const progress = setInterval(() => {
-          currentStep++;
-          let actualProgress = (progressEndValue / numberOfSteps) * currentStep;
-          
-          // Ensure actualProgress doesn't exceed progressEndValue, especially on the last step
-          if (currentStep >= numberOfSteps) {
-            actualProgress = progressEndValue;
-          }
-
-          const displayedPercentage = Math.round(actualProgress); 
-          
-          progressValueSpan.textContent = `${Math.min(displayedPercentage, progressEndValue)}%`;
-          const angle = Math.min(actualProgress, progressEndValue) * 3.6;
-          element.style.background = `conic-gradient(#00f0ff ${angle}deg, #0a192f ${angle}deg)`;
-          
-          if (currentStep >= numberOfSteps) {
-            // Ensure final state is exactly the target percentage
-            progressValueSpan.textContent = `${progressEndValue}%`;
-            element.style.background = `conic-gradient(#00f0ff ${progressEndValue * 3.6}deg, #0a192f ${progressEndValue * 3.6}deg)`;
-            clearInterval(progress);
-            element.dataset.animated = "true"; // Mark as animated
-          }
-        }, stepInterval);
-      });
-    }
-
     function animateCounters() {
+      // Only animate if not already animated to the target values
       if (document.getElementById('monthsExperience').dataset.animated === "true" && 
-          parseInt(document.getElementById('monthsExperience').textContent) === 3) {
-        // Example: if already animated to the target value, don't re-animate
-        // This logic can be made more generic if needed
-        // return;
+          parseInt(document.getElementById('monthsExperience').textContent) === 3 &&
+          document.getElementById('projectsCompleted').dataset.animated === "true" &&
+          parseInt(document.getElementById('projectsCompleted').textContent) === 1 && // Assuming 1 project after removal
+          document.getElementById('cvesResearched').dataset.animated === "true" &&
+          parseInt(document.getElementById('cvesResearched').textContent) === 0 &&
+          document.getElementById('toolsMastered').dataset.animated === "true" &&
+          parseInt(document.getElementById('toolsMastered').textContent) === 5) {
+         return;
       }
-      // Reset animation flag for counters if we want them to re-animate each time 'home' is shown
-      // For now, they animate once.
-      if (document.getElementById('monthsExperience').dataset.animated === "true") return;
-
+      
+      // Reset animation flags before starting
+      document.getElementById('monthsExperience').dataset.animated = "false";
+      document.getElementById('projectsCompleted').dataset.animated = "false";
+      document.getElementById('cvesResearched').dataset.animated = "false";
+      document.getElementById('toolsMastered').dataset.animated = "false";
 
       animateCounter("monthsExperience", 0, 3, 1200); 
-      animateCounter("projectsCompleted", 0, 1, 1200);  
+      animateCounter("projectsCompleted", 0, 1, 1200);  // Updated to 1 since one project remains
       animateCounter("cvesResearched", 0, 0, 1200);    
-      animateCounter("toolsMastered", 0, 5, 1200);   
-
-      // The animateCounter function itself now sets dataset.animated = "true" upon completion.
-      // So, no need to set it globally for all counters here.
+      animateCounter("toolsMastered", 0, 5, 1200);    
     }
 
     function isElementInViewport(el) {
         if (!el) return false;
         const rect = el.getBoundingClientRect();
         return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            rect.top < window.innerHeight && rect.bottom >= 0 && // Check for partial visibility too
+            rect.left < window.innerWidth && rect.right >= 0
         );
     }
     
@@ -705,17 +692,84 @@
             }
         }
     }
+    
+    function animateCircularProgress() {
+      const circularProgressElements = document.querySelectorAll(".circular-progress");
+      
+      circularProgressElements.forEach(element => {
+        if (element.dataset.animated === "true") {
+            const progressValueSpan = element.querySelector(".progress-value");
+            const progressEndValue = parseInt(element.getAttribute("data-percent"));
+            if (progressValueSpan && !isNaN(progressEndValue)) {
+                progressValueSpan.textContent = `${progressEndValue}%`;
+                element.style.background = `conic-gradient(#00f0ff ${progressEndValue * 3.6}deg, #0a192f ${progressEndValue * 3.6}deg)`;
+            }
+            return; 
+        }
+
+        const progressValueSpan = element.querySelector(".progress-value");
+        if (!progressValueSpan) return;
+
+        const progressEndValueStr = element.getAttribute("data-percent");
+        const progressEndValue = parseInt(progressEndValueStr);
+
+        if (isNaN(progressEndValue) || progressEndValue < 0 || progressEndValue > 100) { 
+            progressValueSpan.textContent = (isNaN(progressEndValue) || progressEndValue < 0) ? "N/A" : "100%"; 
+            const displayAngle = (isNaN(progressEndValue) || progressEndValue < 0) ? 0 : 360; 
+            element.style.background = `conic-gradient(#00f0ff ${displayAngle}deg, #0a192f ${displayAngle}deg)`; 
+            element.dataset.animated = "true"; 
+            return;
+        }
+        
+        progressValueSpan.textContent = `0%`;
+        element.style.background = `conic-gradient(#00f0ff 0deg, #0a192f 0deg)`;
+
+        if (progressEndValue === 0) {
+            element.dataset.animated = "true";
+            return; 
+        }
+
+        const totalAnimationTime = 1000; 
+        const numberOfSteps = 50;       
+        const stepInterval = Math.max(1, totalAnimationTime / numberOfSteps); 
+
+        let currentStep = 0;
+        
+        const progress = setInterval(() => {
+          currentStep++;
+          let actualProgress = (progressEndValue / numberOfSteps) * currentStep;
+          
+          if (currentStep >= numberOfSteps) {
+            actualProgress = progressEndValue;
+          }
+
+          const displayedPercentage = Math.round(actualProgress); 
+          
+          progressValueSpan.textContent = `${Math.min(displayedPercentage, progressEndValue)}%`;
+          const angle = Math.min(actualProgress, progressEndValue) * 3.6;
+          element.style.background = `conic-gradient(#00f0ff ${angle}deg, #0a192f ${angle}deg)`;
+          
+          if (currentStep >= numberOfSteps) {
+            progressValueSpan.textContent = `${progressEndValue}%`;
+            element.style.background = `conic-gradient(#00f0ff ${progressEndValue * 3.6}deg, #0a192f ${progressEndValue * 3.6}deg)`;
+            clearInterval(progress);
+            element.dataset.animated = "true"; 
+          }
+        }, stepInterval);
+      });
+    }
+
 
     window.onload = function () {
       document.getElementById('currentYear').textContent = new Date().getFullYear();
       const homeSection = document.getElementById('home');
       if (homeSection && !homeSection.classList.contains('hidden') && isElementInViewport(homeSection)) {
-          setTimeout(animateCounters, 600); 
+          setTimeout(animateCounters, 600); // Delay for initial fade-in
       }
       
+      // Initial check for skills section if it's somehow visible on load (though default is hidden)
       const skillsSection = document.getElementById('skills');
       if (skillsSection && !skillsSection.classList.contains('hidden') && isElementInViewport(skillsSection)) {
-          // Ensure animation flags are reset if skills section is visible on load (though it's hidden by default)
           document.querySelectorAll(".circular-progress").forEach(el => el.dataset.animated = "false");
           animateCircularProgress();
       }
