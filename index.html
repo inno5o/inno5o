@@ -34,10 +34,9 @@
   <style>
     html {
       scroll-behavior: smooth;
-      /* font-family set by Tailwind config */
     }
     body {
-      font-family: 'Inter', 'Aptos', sans-serif; /* Ensure body also uses the font */
+      font-family: 'Inter', 'Aptos', sans-serif; 
       background-color: #0a192f; /* cyber-dark */
       color: #ccd6f6; /* cyber-light-text */
     }
@@ -56,54 +55,53 @@
       transition: opacity 0.4s ease, transform 0.4s ease;
     }
     .neon-button {
-      color: #00f0ff; /* cyber-blue */
-      border: 1px solid #00f0ff; /* cyber-blue */
+      color: #00f0ff; 
+      border: 1px solid #00f0ff; 
       padding: 0.4rem 1rem;
       border-radius: 0.375rem; /* rounded-md */
       background-color: transparent;
       transition: all 0.3s;
-      box-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff; /* cyber-blue */
+      box-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff; 
     }
     .neon-button:hover {
-      background-color: #00f0ff; /* cyber-blue */
+      background-color: #00f0ff; 
       color: #000;
-      box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff; /* cyber-blue */
+      box-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff; 
     }
-    /* New style for skill notes buttons */
     .skill-note-button {
-      color: #00f0ff; /* cyber-blue */
-      border: 1px solid rgba(0, 240, 255, 0.5); /* Lighter border */
-      padding: 0.25rem 0.75rem; /* Smaller padding */
+      color: #00f0ff; 
+      border: 1px solid rgba(0, 240, 255, 0.5); 
+      padding: 0.25rem 0.75rem; 
       border-radius: 0.375rem; /* rounded-md */
       background-color: transparent;
-      font-size: 0.75rem; /* Smaller font size */
+      font-size: 0.75rem; 
       transition: all 0.3s;
-      box-shadow: 0 0 3px rgba(0, 240, 255, 0.5); /* Softer shadow */
+      box-shadow: 0 0 3px rgba(0, 240, 255, 0.5); 
     }
     .skill-note-button:hover {
-      background-color: rgba(0, 240, 255, 0.2); /* Slight background on hover */
-      color: #00f0ff; /* cyber-blue */
-      box-shadow: 0 0 6px #00f0ff; /* cyber-blue */
+      background-color: rgba(0, 240, 255, 0.2); 
+      color: #00f0ff; 
+      box-shadow: 0 0 6px #00f0ff; 
       border-color: #00f0ff;
     }
     .neon-icon {
-      color: #00f0ff; /* cyber-blue */
+      color: #00f0ff; 
       transition: all 0.3s;
-      text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff; /* cyber-blue */
+      text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff; 
     }
     .neon-icon:hover {
-      text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff; /* cyber-blue */
+      text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff; 
     }
     .cyber-card {
-      background: rgba(0, 0, 20, 0.5); /* Darker, slightly transparent */
-      border: 1px solid rgba(0, 240, 255, 0.2); /* cyber-blue with alpha */
+      background: rgba(0, 0, 20, 0.5); 
+      border: 1px solid rgba(0, 240, 255, 0.2); 
       backdrop-filter: blur(5px);
       transition: all 0.3s;
       border-radius: 0.75rem; /* rounded-xl */
     }
     .cyber-card:hover {
-      border-color: #00f0ff; /* cyber-blue */
-      box-shadow: 0 0 15px rgba(0, 240, 255, 0.3); /* cyber-blue with alpha */
+      border-color: #00f0ff; 
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.3); 
       transform: translateY(-5px);
     }
     .circular-progress {
@@ -111,11 +109,11 @@
       height: 120px;
       width: 120px;
       border-radius: 50%;
-      background: conic-gradient(#00f0ff 0deg, #0a192f 0deg); /* cyber-blue, cyber-dark */
+      background: conic-gradient(#00f0ff 0deg, #0a192f 0deg); 
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.05s linear; /* Faster transition for smoother conic-gradient updates */
+      transition: background 0.05s linear; 
     }
     .circular-progress::before {
       content: "";
@@ -131,34 +129,63 @@
       font-weight: 600;
       color: #00f0ff; /* cyber-blue */
     }
-    .skill-name { /* This is the text label below the progress circle */
+    .skill-name { 
       margin-top: 10px;
       font-size: 14px;
       font-weight: 500;
       color: #ccd6f6; /* cyber-light-text */
       text-align: center;
     }
-    .skill-item { /* Container for progress, name, button, and details */
+    .skill-item { 
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 15px; /* Adjusted margin for better spacing within cards */
+      margin: 15px; 
       padding: 10px; 
     }
-    .skill-detail { /* Styling for the hidden notes */
-      background-color: rgba(17, 24, 39, 0.7); /* Tailwind gray-900 with opacity, adjust as needed */
-      border: 1px solid rgba(0, 240, 255, 0.3); /* cyber-blue with alpha */
+    .skill-detail { 
+      background-color: rgba(17, 24, 39, 0.7); 
+      border: 1px solid rgba(0, 240, 255, 0.3); 
       border-radius: 0.5rem; /* rounded-lg */
       color: #ccd6f6; /* cyber-light-text */
       text-align: left;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      width: 100%; /* Ensure details take full width of skill-item */
-      max-width: 280px; /* Max width for readability */
+      width: 100%; 
+      max-width: 280px; 
     }
-    /* Custom focus style for accessibility */
     .focusable:focus-visible {
-        outline: 2px solid #00f0ff; /* cyber-blue */
+        outline: 2px solid #00f0ff; 
         outline-offset: 2px;
+    }
+
+    /* Project Modal Styles */
+    .modal {
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .modal.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+    .modal-content {
+        max-height: 90vh;
+    }
+    .slider-image {
+        min-width: 100%;
+        height: auto; /* Or a fixed height like 400px */
+        object-fit: cover; /* Or 'contain' depending on preference */
+    }
+    .slider-dot {
+        cursor: pointer;
+        height: 12px;
+        width: 12px;
+        margin: 0 4px;
+        background-color: rgba(0, 240, 255, 0.4); /* cyber-blue with alpha */
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+    }
+    .slider-dot.active {
+        background-color: #00f0ff; /* cyber-blue */
     }
 
   </style>
@@ -483,7 +510,8 @@
     <section id="projects" class="section hidden mt-16">
       <h2 class="text-3xl font-semibold border-b border-gray-700 pb-2 mb-8 text-cyber-blue">Network Security Projects</h2>
       
-      <div class="grid md:grid-cols-1 gap-6"> <div class="cyber-card p-6">
+      <div class="grid md:grid-cols-1 gap-6"> 
+        <div class="cyber-card p-6">
           <div class="flex items-center mb-4">
             <div class="bg-gray-800 p-3 rounded-lg mr-4">
               <i class="fas fa-search-location text-2xl text-cyber-blue"></i>
@@ -499,9 +527,9 @@
             <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text">Networking</span>
             <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text">Scapy</span>
           </div>
-          <a href="#" class="neon-button inline-block text-sm focusable">View Details</a>
+          <button type="button" class="neon-button inline-block text-sm focusable view-details-btn" data-project-id="network-monitoring-tool">View Details</button>
         </div>
-        </div>
+      </div>
     </section>
 
     <section id="certifications" class="section hidden mt-16">
@@ -516,7 +544,6 @@
             <p class="text-cyber-light-text mt-2 text-sm">Focusing on fundamental networking concepts, IP connectivity, security fundamentals, and automation.</p>
           </div>
         </div>
-        
       </div>
     </section>
 
@@ -562,12 +589,44 @@
     </section>
   </main>
 
+  <div id="projectModal" class="modal fixed inset-0 bg-cyber-dark bg-opacity-90 backdrop-blur-md flex items-center justify-center p-4 hidden z-50">
+    <div class="cyber-card p-6 sm:p-8 rounded-xl max-w-3xl w-full modal-content overflow-y-auto relative shadow-2xl shadow-cyber-blue/30">
+      <button id="closeModalButton" aria-label="Close modal" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-cyber-dim-text hover:text-cyber-blue transition-colors text-3xl sm:text-4xl focusable z-10">&times;</button>
+      
+      <h3 id="modalProjectTitle" class="text-2xl sm:text-3xl font-bold text-cyber-blue mb-4 sm:mb-6">Project Title</h3>
+
+      <div id="modalImageSlider" class="relative mb-6 rounded-lg overflow-hidden bg-cyber-dark/50 aspect-video">
+        <div id="sliderImagesContainer" class="flex transition-transform duration-500 ease-in-out h-full">
+          </div>
+        <button id="prevSlide" aria-label="Previous image" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60 focusable disabled:opacity-50 disabled:cursor-not-allowed"><i class="fas fa-chevron-left"></i></button>
+        <button id="nextSlide" aria-label="Next image" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60 focusable disabled:opacity-50 disabled:cursor-not-allowed"><i class="fas fa-chevron-right"></i></button>
+        <div id="sliderDots" class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          </div>
+      </div>
+
+      <div class="prose prose-sm sm:prose-base max-w-none text-cyber-light-text mb-4 sm:mb-6 leading-relaxed">
+        <p id="modalProjectDescription">Detailed project description...</p>
+      </div>
+      
+      <h4 class="text-lg sm:text-xl font-semibold text-cyber-blue mb-2">Technologies Used:</h4>
+      <div id="modalProjectTech" class="flex flex-wrap gap-2 mb-6">
+        </div>
+      
+      <div class="mt-6 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+        <a id="modalProjectLiveLink" href="#" target="_blank" rel="noopener noreferrer" class="neon-button inline-block text-sm focusable hidden text-center">View Live</a>
+        <a id="modalProjectRepoLink" href="#" target="_blank" rel="noopener noreferrer" class="neon-button inline-block text-sm focusable hidden text-center">View Repo</a>
+      </div>
+    </div>
+  </div>
+
+
   <footer class="text-center text-cyber-dim-text text-sm py-6 border-t border-gray-800">
     <p>&copy; <span id="currentYear">2025</span> Innocent Zivare</p>
     <p class="mt-2">All security research conducted ethically and legally.</p>
   </footer>
 
   <script>
+    // --- Existing Script Content ---
     let currentSection = document.getElementById('home');
 
     function showSection(sectionId) {
@@ -586,7 +645,6 @@
         }
 
         newSection.classList.remove('hidden');
-        // Force reflow for transition
         void newSection.offsetWidth; 
         newSection.classList.add('fade-enter');
         
@@ -594,38 +652,30 @@
           newSection.classList.remove('fade-enter');
           newSection.classList.add('fade-enter-active');
           currentSection = newSection;
-          
         }, 10); 
 
         if (sectionId === 'home' && isElementInViewport(newSection)) animateCounters();
         
         if (sectionId === 'skills') {
-            document.querySelectorAll(".circular-progress").forEach(el => el.dataset.animated = "false"); // Reset animation flag
-            if (isElementInViewport(newSection)) { // Check if section is in viewport before animating
-                 setTimeout(animateCircularProgress, 50); // Add a slight delay for fade-in
+            document.querySelectorAll(".circular-progress").forEach(el => el.dataset.animated = "false");
+            if (isElementInViewport(newSection)) {
+                 setTimeout(animateCircularProgress, 50); 
             }
         }
-
-
       }, 400); 
     }
 
     function animateCounter(id, start, end, duration) {
       let obj = document.getElementById(id);
       if (!obj) return; 
-
       if (obj.dataset.animated === "true" && parseInt(obj.textContent) === end) return;
-
       let range = end - start;
       let stepTime = (range === 0) ? duration : Math.abs(Math.floor(duration / range)); 
       if (stepTime === 0) stepTime = 1; 
-
       let current = start;
       let increment = end > start ? 1 : -1;
-      
       obj.textContent = start; 
       obj.dataset.animated = "false"; 
-
       let timer = setInterval(() => {
         current += increment;
         obj.textContent = current;
@@ -637,35 +687,31 @@
     }
 
     function animateCounters() {
-      // Only animate if not already animated to the target values
       if (document.getElementById('monthsExperience').dataset.animated === "true" && 
           parseInt(document.getElementById('monthsExperience').textContent) === 3 &&
           document.getElementById('projectsCompleted').dataset.animated === "true" &&
-          parseInt(document.getElementById('projectsCompleted').textContent) === 1 && // Assuming 1 project after removal
+          parseInt(document.getElementById('projectsCompleted').textContent) === 1 &&
           document.getElementById('cvesResearched').dataset.animated === "true" &&
           parseInt(document.getElementById('cvesResearched').textContent) === 0 &&
           document.getElementById('toolsMastered').dataset.animated === "true" &&
           parseInt(document.getElementById('toolsMastered').textContent) === 5) {
          return;
       }
-      
-      // Reset animation flags before starting
       document.getElementById('monthsExperience').dataset.animated = "false";
       document.getElementById('projectsCompleted').dataset.animated = "false";
       document.getElementById('cvesResearched').dataset.animated = "false";
       document.getElementById('toolsMastered').dataset.animated = "false";
-
       animateCounter("monthsExperience", 0, 1, 1200); 
       animateCounter("projectsCompleted", 200, 0, 1200);  // Updated to 1 since one project remains
       animateCounter("cvesResearched", 5, 1, 1200);    
-      animateCounter("toolsMastered", 100, 0, 1200);    
+      animateCounter("toolsMastered", 100, 0, 1200); 
     }
 
     function isElementInViewport(el) {
         if (!el) return false;
         const rect = el.getBoundingClientRect();
         return (
-            rect.top < window.innerHeight && rect.bottom >= 0 && // Check for partial visibility too
+            rect.top < window.innerHeight && rect.bottom >= 0 &&
             rect.left < window.innerWidth && rect.right >= 0
         );
     }
@@ -673,29 +719,20 @@
     function toggleSkillDetail(buttonElement) {
         const detailElement = buttonElement.nextElementSibling; 
         const iconElement = buttonElement.querySelector('i'); 
-
         if (!detailElement) {
             console.error("Skill detail element not found. Check HTML structure.");
             return;
         }
-
         const isHidden = detailElement.classList.toggle('hidden');
         buttonElement.setAttribute('aria-expanded', String(!isHidden));
-
         if (iconElement) {
-            if (isHidden) {
-                iconElement.classList.remove('fa-chevron-up');
-                iconElement.classList.add('fa-chevron-down');
-            } else {
-                iconElement.classList.remove('fa-chevron-down');
-                iconElement.classList.add('fa-chevron-up');
-            }
+            iconElement.classList.toggle('fa-chevron-up', !isHidden);
+            iconElement.classList.toggle('fa-chevron-down', isHidden);
         }
     }
     
     function animateCircularProgress() {
       const circularProgressElements = document.querySelectorAll(".circular-progress");
-      
       circularProgressElements.forEach(element => {
         if (element.dataset.animated === "true") {
             const progressValueSpan = element.querySelector(".progress-value");
@@ -706,13 +743,10 @@
             }
             return; 
         }
-
         const progressValueSpan = element.querySelector(".progress-value");
         if (!progressValueSpan) return;
-
         const progressEndValueStr = element.getAttribute("data-percent");
         const progressEndValue = parseInt(progressEndValueStr);
-
         if (isNaN(progressEndValue) || progressEndValue < 0 || progressEndValue > 100) { 
             progressValueSpan.textContent = (isNaN(progressEndValue) || progressEndValue < 0) ? "N/A" : "100%"; 
             const displayAngle = (isNaN(progressEndValue) || progressEndValue < 0) ? 0 : 360; 
@@ -720,35 +754,24 @@
             element.dataset.animated = "true"; 
             return;
         }
-        
         progressValueSpan.textContent = `0%`;
         element.style.background = `conic-gradient(#00f0ff 0deg, #0a192f 0deg)`;
-
         if (progressEndValue === 0) {
             element.dataset.animated = "true";
             return; 
         }
-
         const totalAnimationTime = 1000; 
         const numberOfSteps = 50;       
         const stepInterval = Math.max(1, totalAnimationTime / numberOfSteps); 
-
         let currentStep = 0;
-        
         const progress = setInterval(() => {
           currentStep++;
           let actualProgress = (progressEndValue / numberOfSteps) * currentStep;
-          
-          if (currentStep >= numberOfSteps) {
-            actualProgress = progressEndValue;
-          }
-
+          if (currentStep >= numberOfSteps) actualProgress = progressEndValue;
           const displayedPercentage = Math.round(actualProgress); 
-          
           progressValueSpan.textContent = `${Math.min(displayedPercentage, progressEndValue)}%`;
           const angle = Math.min(actualProgress, progressEndValue) * 3.6;
           element.style.background = `conic-gradient(#00f0ff ${angle}deg, #0a192f ${angle}deg)`;
-          
           if (currentStep >= numberOfSteps) {
             progressValueSpan.textContent = `${progressEndValue}%`;
             element.style.background = `conic-gradient(#00f0ff ${progressEndValue * 3.6}deg, #0a192f ${progressEndValue * 3.6}deg)`;
@@ -759,22 +782,190 @@
       });
     }
 
+    // --- New Project Modal Script ---
+    const projectsData = {
+      'network-monitoring-tool': {
+        title: 'Network Monitoring Tool',
+        images: [
+          'https://placehold.co/800x450/0a192f/00f0ff?text=Monitoring+Dashboard',
+          'https://placehold.co/800x450/0a192f/00f0ff?text=Alert+System',
+          'https://placehold.co/800x450/0a192f/00f0ff?text=Device+List+View'
+        ],
+        description: 'This lightweight Real-Time Network Monitoring System, built with Python and Scapy, is designed to detect unauthorized devices on local networks. It actively scans the network, identifies connected devices by their MAC addresses, and compares them against a list of known devices. If an unrecognized device is found, an alert is triggered. The system helps maintain network integrity by providing visibility into connected devices and flagging potential intruders. Future development plans include integrating machine learning algorithms for more sophisticated anomaly detection and predictive analysis of network behavior.',
+        technologies: ['Python', 'Scapy', 'Networking', 'Security Monitoring', 'AI (Future Scope)'],
+        liveLink: null, // Replace with actual link if available, e.g., 'https://yourprojectlive.com'
+        repoLink: 'https://github.com/yourusername/network-monitoring-tool' // Replace with your actual repo link
+      }
+      // Add more projects here following the same structure
+    };
 
+    const modalElement = document.getElementById('projectModal');
+    const closeModalButton = document.getElementById('closeModalButton');
+    const modalProjectTitle = document.getElementById('modalProjectTitle');
+    const sliderImagesContainer = document.getElementById('sliderImagesContainer');
+    const prevSlideButton = document.getElementById('prevSlide');
+    const nextSlideButton = document.getElementById('nextSlide');
+    const sliderDotsContainer = document.getElementById('sliderDots');
+    const modalProjectDescription = document.getElementById('modalProjectDescription');
+    const modalProjectTech = document.getElementById('modalProjectTech');
+    const modalProjectLiveLink = document.getElementById('modalProjectLiveLink');
+    const modalProjectRepoLink = document.getElementById('modalProjectRepoLink');
+
+    let currentSlideIndex = 0;
+    let projectImages = [];
+
+    function populateModal(projectId) {
+      const project = projectsData[projectId];
+      if (!project) {
+        console.error('Project data not found for ID:', projectId);
+        return;
+      }
+
+      modalProjectTitle.textContent = project.title;
+      modalProjectDescription.textContent = project.description;
+      
+      // Populate technologies
+      modalProjectTech.innerHTML = ''; // Clear existing
+      project.technologies.forEach(tech => {
+        const span = document.createElement('span');
+        span.className = 'px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text';
+        span.textContent = tech;
+        modalProjectTech.appendChild(span);
+      });
+
+      // Populate links
+      if (project.liveLink) {
+        modalProjectLiveLink.href = project.liveLink;
+        modalProjectLiveLink.classList.remove('hidden');
+      } else {
+        modalProjectLiveLink.classList.add('hidden');
+      }
+      if (project.repoLink) {
+        modalProjectRepoLink.href = project.repoLink;
+        modalProjectRepoLink.classList.remove('hidden');
+      } else {
+        modalProjectRepoLink.classList.add('hidden');
+      }
+
+      // Populate image slider
+      projectImages = project.images;
+      sliderImagesContainer.innerHTML = ''; // Clear existing images
+      sliderDotsContainer.innerHTML = ''; // Clear existing dots
+
+      if (projectImages.length > 0) {
+        projectImages.forEach((imgSrc, index) => {
+          const imgDiv = document.createElement('div');
+          imgDiv.className = 'slider-image flex-shrink-0 w-full h-full flex items-center justify-center'; // Ensure image div takes full space
+          const img = document.createElement('img');
+          img.src = imgSrc;
+          img.alt = `${project.title} - Image ${index + 1}`;
+          img.className = 'max-w-full max-h-full object-contain rounded-md'; // Ensure image scales within its container
+          img.onerror = function() { this.src = 'https://placehold.co/600x400/0a192f/00f0ff?text=Image+Not+Found'; };
+          imgDiv.appendChild(img);
+          sliderImagesContainer.appendChild(imgDiv);
+
+          const dot = document.createElement('span');
+          dot.className = 'slider-dot';
+          dot.dataset.slideIndex = index;
+          dot.addEventListener('click', () => showSlide(index));
+          sliderDotsContainer.appendChild(dot);
+        });
+        currentSlideIndex = 0;
+        showSlide(currentSlideIndex);
+      }
+      updateSliderControls();
+      modalElement.classList.remove('hidden');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function showSlide(index) {
+      if (!projectImages || projectImages.length === 0) return;
+      currentSlideIndex = index;
+      const offset = -index * 100;
+      sliderImagesContainer.style.transform = `translateX(${offset}%)`;
+
+      // Update active dot
+      Array.from(sliderDotsContainer.children).forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlideIndex);
+      });
+      updateSliderControls();
+    }
+    
+    function updateSliderControls() {
+        if (!projectImages || projectImages.length <= 1) {
+            prevSlideButton.classList.add('hidden');
+            nextSlideButton.classList.add('hidden');
+            sliderDotsContainer.classList.add('hidden');
+        } else {
+            prevSlideButton.classList.remove('hidden');
+            nextSlideButton.classList.remove('hidden');
+            sliderDotsContainer.classList.remove('hidden');
+            prevSlideButton.disabled = currentSlideIndex === 0;
+            nextSlideButton.disabled = currentSlideIndex === projectImages.length - 1;
+        }
+    }
+
+
+    prevSlideButton.addEventListener('click', () => {
+      if (currentSlideIndex > 0) {
+        showSlide(currentSlideIndex - 1);
+      }
+    });
+
+    nextSlideButton.addEventListener('click', () => {
+      if (currentSlideIndex < projectImages.length - 1) {
+        showSlide(currentSlideIndex + 1);
+      }
+    });
+
+    function openProjectModal(projectId) {
+        populateModal(projectId);
+    }
+    
+    function closeProjectModal() {
+      modalElement.classList.add('hidden');
+      document.body.style.overflow = 'auto'; // Restore background scrolling
+    }
+
+    closeModalButton.addEventListener('click', closeProjectModal);
+    modalElement.addEventListener('click', (event) => { // Close on backdrop click
+      if (event.target === modalElement) {
+        closeProjectModal();
+      }
+    });
+    
+    // Add event listeners to "View Details" buttons
+    document.querySelectorAll('.view-details-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const projectId = button.dataset.projectId;
+        openProjectModal(projectId);
+      });
+    });
+
+
+    // --- Window Onload ---
     window.onload = function () {
       document.getElementById('currentYear').textContent = new Date().getFullYear();
       const homeSection = document.getElementById('home');
       if (homeSection && !homeSection.classList.contains('hidden') && isElementInViewport(homeSection)) {
-          setTimeout(animateCounters, 600); // Delay for initial fade-in
+          setTimeout(animateCounters, 600); 
       }
       
-      // Initial check for skills section if it's somehow visible on load (though default is hidden)
       const skillsSection = document.getElementById('skills');
       if (skillsSection && !skillsSection.classList.contains('hidden') && isElementInViewport(skillsSection)) {
           document.querySelectorAll(".circular-progress").forEach(el => el.dataset.animated = "false");
           animateCircularProgress();
+      }
+
+      // Initialize project modal functionality if any view-details-btn exists
+      if(document.querySelector('.view-details-btn')) {
+        // The event listeners are already set up above, this is just a conceptual placeholder
+        // if more specific init was needed for modals on load.
       }
     };
 
   </script>
 </body>
 </html>
+
+      
