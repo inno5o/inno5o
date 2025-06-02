@@ -169,23 +169,23 @@
     .modal-content {
         max-height: 90vh;
     }
-    .slider-image {
+    .slider-image-container { /* Renamed from slider-image for clarity */
         min-width: 100%;
-        height: auto; /* Or a fixed height like 400px */
-        object-fit: cover; /* Or 'contain' depending on preference */
+        height: 100%; /* Ensure it fills the sliderImagesContainer height */
+        object-fit: cover; 
     }
     .slider-dot {
         cursor: pointer;
         height: 12px;
         width: 12px;
         margin: 0 4px;
-        background-color: rgba(0, 240, 255, 0.4); /* cyber-blue with alpha */
+        background-color: rgba(0, 240, 255, 0.4); 
         border-radius: 50%;
         display: inline-block;
         transition: background-color 0.3s ease;
     }
     .slider-dot.active {
-        background-color: #00f0ff; /* cyber-blue */
+        background-color: #00f0ff; 
     }
 
   </style>
@@ -243,7 +243,7 @@
       </div>
     </section>
 
-    <section id="skills" class="section hidden mt-16">
+      <section id="skills" class="section hidden mt-16">
       <h2 class="text-3xl font-semibold border-b border-gray-700 pb-2 mb-8 text-cyber-blue">Technical Skills</h2>
       
       <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6"> 
@@ -428,7 +428,7 @@
             </h3>
             <div class="flex flex-wrap justify-around">
               <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-                <div class="circular-progress" data-percent="20"> <span class="progress-value">0%</span></div>
+                <div class="circular-progress" data-percent="20"> <span class="progress-value">1%</span></div>
                 <span class="skill-name">Reconnaissance</span>
                 <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
                   Details <i class="fas fa-chevron-down ml-1"></i>
@@ -436,7 +436,7 @@
                 <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                   <strong class="font-semibold block mb-2">Tools & Techniques:</strong>
                   <ul class="list-disc list-inside text-sm space-y-1">
-                      <li></li>
+                      <li>Nmap (basic scans)</li>
                       <li></li>
                       <li></li>
                       <li></li>
@@ -510,8 +510,7 @@
     <section id="projects" class="section hidden mt-16">
       <h2 class="text-3xl font-semibold border-b border-gray-700 pb-2 mb-8 text-cyber-blue">Network Security Projects</h2>
       
-      <div class="grid md:grid-cols-1 gap-6"> 
-        <div class="cyber-card p-6">
+      <div class="grid md:grid-cols-2 gap-6"> <div class="cyber-card p-6">
           <div class="flex items-center mb-4">
             <div class="bg-gray-800 p-3 rounded-lg mr-4">
               <i class="fas fa-search-location text-2xl text-cyber-blue"></i>
@@ -528,6 +527,24 @@
             <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text">Scapy</span>
           </div>
           <button type="button" class="neon-button inline-block text-sm focusable view-details-btn" data-project-id="network-monitoring-tool">View Details</button>
+        </div>
+
+        <div class="cyber-card p-6">
+          <div class="flex items-center mb-4">
+            <div class="bg-gray-800 p-3 rounded-lg mr-4">
+              <i class="fas fa-shield-virus text-2xl text-cyber-blue"></i> </div>
+            <h3 class="text-xl font-bold text-cyber-light-text">IDS/IPS System Using Suricata</h3>
+          </div>
+          <p class="text-cyber-dim-text mb-4">
+            Developed and configured an Intrusion Detection and Prevention System (IDS/IPS) utilizing Suricata to monitor network traffic, detect malicious activities, and enforce security policies.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text">Suricata</span>
+            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text">Network Security</span>
+            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text">Linux</span>
+            <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text">Rule Writing</span>
+          </div>
+          <button type="button" class="neon-button inline-block text-sm focusable view-details-btn" data-project-id="ids-ips-suricata">View Details</button>
         </div>
       </div>
     </section>
@@ -614,7 +631,7 @@
       
       <div class="mt-6 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
         <a id="modalProjectLiveLink" href="#" target="_blank" rel="noopener noreferrer" class="neon-button inline-block text-sm focusable hidden text-center">View Live</a>
-        <a id="modalProjectRepoLink" href="#" target="_blank" rel="noopener noreferrer" class="neon-button inline-block text-sm focusable hidden text-center">View Documentation</a>
+        <a id="modalProjectRepoLink" href="#" target="_blank" rel="noopener noreferrer" class="neon-button inline-block text-sm focusable hidden text-center">View Documents</a>
       </div>
     </div>
   </div>
@@ -687,24 +704,28 @@
     }
 
     function animateCounters() {
-      if (document.getElementById('monthsExperience').dataset.animated === "true" && 
-          parseInt(document.getElementById('monthsExperience').textContent) === 3 &&
-          document.getElementById('projectsCompleted').dataset.animated === "true" &&
-          parseInt(document.getElementById('projectsCompleted').textContent) === 1 &&
-          document.getElementById('cvesResearched').dataset.animated === "true" &&
-          parseInt(document.getElementById('cvesResearched').textContent) === 0 &&
-          document.getElementById('toolsMastered').dataset.animated === "true" &&
-          parseInt(document.getElementById('toolsMastered').textContent) === 5) {
+      // Check if already animated to target values
+      const monthsExpEl = document.getElementById('monthsExperience');
+      const projectsCompEl = document.getElementById('projectsCompleted'); // Updated to 2 projects
+      const cvesResEl = document.getElementById('cvesResearched');
+      const toolsMasteredEl = document.getElementById('toolsMastered');
+
+      if (monthsExpEl.dataset.animated === "true" && parseInt(monthsExpEl.textContent) === 3 &&
+          projectsCompEl.dataset.animated === "true" && parseInt(projectsCompEl.textContent) === 2 && // Target 2 projects
+          cvesResEl.dataset.animated === "true" && parseInt(cvesResEl.textContent) === 0 &&
+          toolsMasteredEl.dataset.animated === "true" && parseInt(toolsMasteredEl.textContent) === 5) {
          return;
       }
-      document.getElementById('monthsExperience').dataset.animated = "false";
-      document.getElementById('projectsCompleted').dataset.animated = "false";
-      document.getElementById('cvesResearched').dataset.animated = "false";
-      document.getElementById('toolsMastered').dataset.animated = "false";
-      animateCounter("monthsExperience", 0, 1, 1200); 
+      // Reset animation flags
+      monthsExpEl.dataset.animated = "false";
+      projectsCompEl.dataset.animated = "false";
+      cvesResEl.dataset.animated = "false";
+      toolsMasteredEl.dataset.animated = "false";
+
+      animateCounter("monthsExperience", 0, 2, 1200); 
       animateCounter("projectsCompleted", 200, 0, 1200);  // Updated to 1 since one project remains
       animateCounter("cvesResearched", 5, 1, 1200);    
-      animateCounter("toolsMastered", 100, 0, 1200); 
+      animateCounter("toolsMastered", 100, 0, 1200);   
     }
 
     function isElementInViewport(el) {
@@ -782,7 +803,7 @@
       });
     }
 
-    // --- New Project Modal Script ---
+    // --- Project Modal Script ---
     const projectsData = {
       'network-monitoring-tool': {
         title: 'Network Monitoring Tool',
@@ -793,10 +814,21 @@
         ],
         description: 'This lightweight Real-Time Network Monitoring System, built with Python and Scapy, is designed to detect unauthorized devices on local networks. It actively scans the network, identifies connected devices by their MAC addresses, and compares them against a list of known devices. If an unrecognized device is found, an alert is triggered. The system helps maintain network integrity by providing visibility into connected devices and flagging potential intruders. Future development plans include integrating machine learning algorithms for more sophisticated anomaly detection and predictive analysis of network behavior.',
         technologies: ['Python', 'Scapy', 'Networking', 'Security Monitoring', 'AI (Future Scope)'],
-        liveLink: null, // Replace with actual link if available, e.g., 'https://yourprojectlive.com'
-        repoLink: 'https://github.com/yourusername/network-monitoring-tool' // Replace with your actual repo link
+        liveLink: null, 
+        repoLink: 'https://github.com/yourusername/network-monitoring-tool' 
+      },
+      'ids-ips-suricata': {
+        title: 'IDS/IPS System Using Suricata',
+        images: [
+          'https://placehold.co/800x450/0a192f/00f0ff?text=Suricata+Dashboard',
+          'https://placehold.co/800x450/0a192f/00f0ff?text=Rule+Configuration',
+          'https://placehold.co/800x450/0a192f/00f0ff?text=Alert+Examples'
+        ],
+        description: 'Developed and configured an Intrusion Detection and Prevention System (IDS/IPS) utilizing Suricata. This project involved setting up Suricata on a Linux environment, writing custom rules to detect specific network threats, and integrating it with logging and alerting mechanisms like the ELK Stack (Elasticsearch, Logstash, Kibana) for visualizing security events. The system effectively monitors network traffic for malicious patterns, anomalies, and policy violations, providing real-time alerts and, in IPS mode, the capability to block threats.',
+        technologies: ['Suricata', 'Linux', 'Network Security', 'Cybersecurity', 'Rule Writing', 'ELK Stack (Conceptual)', 'IDS/IPS'],
+        liveLink: null,
+        repoLink: 'https://github.com/yourusername/suricata-ids-ips' // Replace with your actual repo link
       }
-      // Add more projects here following the same structure
     };
 
     const modalElement = document.getElementById('projectModal');
@@ -810,9 +842,36 @@
     const modalProjectTech = document.getElementById('modalProjectTech');
     const modalProjectLiveLink = document.getElementById('modalProjectLiveLink');
     const modalProjectRepoLink = document.getElementById('modalProjectRepoLink');
+    const modalImageSliderElement = document.getElementById('modalImageSlider'); // Get the slider element
 
     let currentSlideIndex = 0;
     let projectImages = [];
+    let autoSlideInterval = null;
+    const AUTO_SLIDE_DELAY = 3000; // 3 seconds
+
+    function startAutoSlide() {
+      if (autoSlideInterval) clearInterval(autoSlideInterval); // Clear existing interval
+      if (projectImages.length <= 1) return; // Don't auto-slide if only one or no images
+
+      autoSlideInterval = setInterval(() => {
+        currentSlideIndex = (currentSlideIndex + 1) % projectImages.length;
+        showSlide(currentSlideIndex);
+      }, AUTO_SLIDE_DELAY);
+    }
+
+    function stopAutoSlide() {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = null;
+    }
+    
+    function resetAutoSlide() {
+        stopAutoSlide();
+        // Only restart if modal is still open and there are multiple images
+        if (!modalElement.classList.contains('hidden') && projectImages.length > 1) {
+            startAutoSlide();
+        }
+    }
+
 
     function populateModal(projectId) {
       const project = projectsData[projectId];
@@ -824,8 +883,7 @@
       modalProjectTitle.textContent = project.title;
       modalProjectDescription.textContent = project.description;
       
-      // Populate technologies
-      modalProjectTech.innerHTML = ''; // Clear existing
+      modalProjectTech.innerHTML = ''; 
       project.technologies.forEach(tech => {
         const span = document.createElement('span');
         span.className = 'px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text';
@@ -833,7 +891,6 @@
         modalProjectTech.appendChild(span);
       });
 
-      // Populate links
       if (project.liveLink) {
         modalProjectLiveLink.href = project.liveLink;
         modalProjectLiveLink.classList.remove('hidden');
@@ -847,19 +904,19 @@
         modalProjectRepoLink.classList.add('hidden');
       }
 
-      // Populate image slider
       projectImages = project.images;
-      sliderImagesContainer.innerHTML = ''; // Clear existing images
-      sliderDotsContainer.innerHTML = ''; // Clear existing dots
+      sliderImagesContainer.innerHTML = ''; 
+      sliderDotsContainer.innerHTML = ''; 
 
       if (projectImages.length > 0) {
         projectImages.forEach((imgSrc, index) => {
           const imgDiv = document.createElement('div');
-          imgDiv.className = 'slider-image flex-shrink-0 w-full h-full flex items-center justify-center'; // Ensure image div takes full space
+          // slider-image-container was the new class name
+          imgDiv.className = 'slider-image-container flex-shrink-0 w-full h-full flex items-center justify-center'; 
           const img = document.createElement('img');
           img.src = imgSrc;
           img.alt = `${project.title} - Image ${index + 1}`;
-          img.className = 'max-w-full max-h-full object-contain rounded-md'; // Ensure image scales within its container
+          img.className = 'max-w-full max-h-full object-contain rounded-md'; 
           img.onerror = function() { this.src = 'https://placehold.co/600x400/0a192f/00f0ff?text=Image+Not+Found'; };
           imgDiv.appendChild(img);
           sliderImagesContainer.appendChild(imgDiv);
@@ -867,15 +924,19 @@
           const dot = document.createElement('span');
           dot.className = 'slider-dot';
           dot.dataset.slideIndex = index;
-          dot.addEventListener('click', () => showSlide(index));
+          dot.addEventListener('click', () => {
+            showSlide(index);
+            resetAutoSlide(); // Reset auto-slide on manual dot click
+          });
           sliderDotsContainer.appendChild(dot);
         });
         currentSlideIndex = 0;
         showSlide(currentSlideIndex);
+        startAutoSlide(); // Start auto-sliding when modal is populated
       }
       updateSliderControls();
       modalElement.classList.remove('hidden');
-      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+      document.body.style.overflow = 'hidden'; 
     }
 
     function showSlide(index) {
@@ -884,7 +945,6 @@
       const offset = -index * 100;
       sliderImagesContainer.style.transform = `translateX(${offset}%)`;
 
-      // Update active dot
       Array.from(sliderDotsContainer.children).forEach((dot, i) => {
         dot.classList.toggle('active', i === currentSlideIndex);
       });
@@ -896,6 +956,7 @@
             prevSlideButton.classList.add('hidden');
             nextSlideButton.classList.add('hidden');
             sliderDotsContainer.classList.add('hidden');
+            stopAutoSlide(); // Stop auto-slide if not enough images
         } else {
             prevSlideButton.classList.remove('hidden');
             nextSlideButton.classList.remove('hidden');
@@ -905,18 +966,29 @@
         }
     }
 
-
     prevSlideButton.addEventListener('click', () => {
       if (currentSlideIndex > 0) {
         showSlide(currentSlideIndex - 1);
+        resetAutoSlide(); // Reset auto-slide on manual prev click
       }
     });
 
     nextSlideButton.addEventListener('click', () => {
       if (currentSlideIndex < projectImages.length - 1) {
         showSlide(currentSlideIndex + 1);
+        resetAutoSlide(); // Reset auto-slide on manual next click
       }
     });
+    
+    // Pause auto-slide on hover
+    modalImageSliderElement.addEventListener('mouseenter', stopAutoSlide);
+    modalImageSliderElement.addEventListener('mouseleave', () => {
+        // Only restart if modal is still open and there are multiple images
+        if (!modalElement.classList.contains('hidden') && projectImages.length > 1) {
+            startAutoSlide();
+        }
+    });
+
 
     function openProjectModal(projectId) {
         populateModal(projectId);
@@ -924,17 +996,17 @@
     
     function closeProjectModal() {
       modalElement.classList.add('hidden');
-      document.body.style.overflow = 'auto'; // Restore background scrolling
+      document.body.style.overflow = 'auto'; 
+      stopAutoSlide(); // Stop auto-sliding when modal is closed
     }
 
     closeModalButton.addEventListener('click', closeProjectModal);
-    modalElement.addEventListener('click', (event) => { // Close on backdrop click
+    modalElement.addEventListener('click', (event) => { 
       if (event.target === modalElement) {
         closeProjectModal();
       }
     });
     
-    // Add event listeners to "View Details" buttons
     document.querySelectorAll('.view-details-btn').forEach(button => {
       button.addEventListener('click', () => {
         const projectId = button.dataset.projectId;
@@ -942,8 +1014,6 @@
       });
     });
 
-
-    // --- Window Onload ---
     window.onload = function () {
       document.getElementById('currentYear').textContent = new Date().getFullYear();
       const homeSection = document.getElementById('home');
@@ -956,16 +1026,8 @@
           document.querySelectorAll(".circular-progress").forEach(el => el.dataset.animated = "false");
           animateCircularProgress();
       }
-
-      // Initialize project modal functionality if any view-details-btn exists
-      if(document.querySelector('.view-details-btn')) {
-        // The event listeners are already set up above, this is just a conceptual placeholder
-        // if more specific init was needed for modals on load.
-      }
     };
 
   </script>
 </body>
 </html>
-
-      
