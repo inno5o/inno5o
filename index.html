@@ -3,7 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Innocent Zivare | Cybersecurity Student</title>
+  
+  <!-- Main page title -->
+  <title>Innocent Zivare | Cybersecurity Portfolio</title>
+  
+  <!-- Standard SEO description -->
+  <meta name="description" content="Portfolio for Innocent Zivare, a cybersecurity student specializing in networking, Python, and ethical hacking." />
+  
+  <!-- =================================================================== -->
+  <!-- LINKEDIN & SOCIAL MEDIA SHARING TAGS -->
+  <!-- =================================================================== -->
+  
+  <!-- og:title: The title that will appear in the LinkedIn preview. -->
+  <meta property="og:title" content="Innocent Zivare | Cybersecurity Portfolio" />
+  
+  <!-- og:description: The description that will appear in the preview. -->
+  <meta property="og:description" content="Portfolio for Innocent Zivare, a cybersecurity student specializing in networking, Python, and ethical hacking." />
+  
+  <!-- og:image: The URL for the preview image.
+       - MUST BE a full, direct URL (e.g., https://...).
+       - Recommended dimensions: 1200x630 pixels (1.91:1 ratio).
+       - MUST BE a JPG, PNG, or GIF file under 5 MB.
+  -->
+  <meta property="og:image" content="https://YOUR_WEBSITE_URL/images/linkedin-preview.png" />
+  
+  <!-- og:url: The full, canonical URL to your live portfolio. -->
+  <meta property="og:url" content="https://YOUR_WEBSITE_URL/portfolio.html" />
+  
+  <!-- og:type: Tells social networks this is a website. -->
+  <meta property="og:type" content="website" />
+  
+  <!-- =================================================================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -169,9 +199,9 @@
     .modal-content {
         max-height: 90vh;
     }
-    .slider-image-container { /* Renamed from slider-image for clarity */
+    .slider-image-container {
         min-width: 100%;
-        height: 100%; /* Ensure it fills the sliderImagesContainer height */
+        height: 100%; 
         object-fit: cover; 
     }
     .slider-dot {
@@ -223,7 +253,7 @@
           <h3 class="text-xl font-bold mb-4 text-cyber-blue">Quick Stats</h3>
           <div class="grid grid-cols-2 gap-4">
             <div class="cyber-card p-4 rounded-lg">
-              <p id="monthsExperience" class="text-3xl font-bold text-center text-cyber-blue">0</p>
+              <p id="projectsStarted" class="text-3xl font-bold text-center text-cyber-blue">0</p>
               <p class="text-cyber-dim-text text-center text-sm">Projects Started</p>
             </div>
             <div class="cyber-card p-4 rounded-lg">
@@ -231,7 +261,7 @@
               <p class="text-cyber-dim-text text-center text-sm">Projects Completed</p>
             </div>
             <div class="cyber-card p-4 rounded-lg">
-              <p id="cvesResearched" class="text-3xl font-bold text-center text-cyber-blue">0</p>
+              <p id="certsCompleted" class="text-3xl font-bold text-center text-cyber-blue">0</p>
               <p class="text-cyber-dim-text text-center text-sm">Certifications Completed</p>
             </div>
             <div class="cyber-card p-4 rounded-lg">
@@ -320,16 +350,16 @@
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">Basic Commands:</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
-                    <li>Navigaton: ls, cd, pwd.</li>
-                    <li>File Ops: cp, mv, rm, mkfir, rmdir</li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                  <li>Navigation: ls, cd, pwd</li>
+                  <li>File Ops: cp, mv, rm, mkdir</li>
+                  <li>Viewing Files: cat, less, head, tail</li>
+                  <li>Permissions: chmod, chown, chgrp</li>
+                  <li>Searching: find, grep</li>
                 </ul>
               </div>
             </div>
             <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-              <div class="circular-progress" data-percent="10"> <span class="progress-value">0%</span>
+              <div class="circular-progress" data-percent="10"> <span class="progress-value">10%</span>
               </div>
               <span class="skill-name">Intermediate User Tasks</span>
               <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
@@ -338,15 +368,15 @@
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">Notes:</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                  <li>Package Management: apt</li>
+                  <li>Process Management: ps, kill, nohup</li>
+                  <li>Storage: df, du, mount</li>
+                  <li>Users & Groups: useradd, usermod</li>
                 </ul>
               </div>
             </div>
             <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto"> 
-              <div class="circular-progress" data-percent="10">
+              <div class="circular-progress" data-percent="5">
                 <span class="progress-value">5%</span>
               </div>
               <span class="skill-name">System Administration</span>
@@ -356,9 +386,10 @@
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">System Administration Notes:</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
-                    <li>Networking (ifconfig/ip, netstat); DNS(/etc/hosts ; SSH: key-based auth, tunneling, scp</li>
-                    <li></li>
-                    <li></li>
+                    <li>Networking: ifconfig/ip, netstat</li>
+                    <li>SSH: key-based auth, tunneling, scp</li>
+                    <li>Security Basics: ufw, iptables</li>
+                    <li>Backup & Recovery: tar, rsync</li>
                 </ul>
               </div>
             </div>
@@ -380,14 +411,14 @@
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">Foundations</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
-                    <li>Core Syntax</li>
-                    <li>Control Flow: Conditionals(if, elif, else); Loops(for, while); Comprehensions</li>
-                    <li>Collections: Tuples, Lists, Sets, Dictionaties</li>
+                    <li>Core Syntax & Data Types</li>
+                    <li>Control Flow: if/else, for/while</li>
+                    <li>Collections: Lists, Dictionaries, Sets</li>
                 </ul>
               </div>
             </div>
             <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-              <div class="circular-progress" data-percent="0"> <span class="progress-value">0%</span>
+              <div class="circular-progress" data-percent="10"> <span class="progress-value">10%</span>
               </div>
               <span class="skill-name">Intermediate</span>
               <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
@@ -396,26 +427,25 @@
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">About:</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>Functions & Modules</li>
+                    <li>File I/O & Exceptions</li>
+                    <li>Object-Oriented Programming (OOP)</li>
                 </ul>
               </div>
             </div>
             <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-              <div class="circular-progress" data-percent="0"> <span class="progress-value">0%</span>
+              <div class="circular-progress" data-percent="5"> <span class="progress-value">5%</span>
               </div>
-              <span class="skill-name">Scripting for Networking & Automation</span>
+              <span class="skill-name">Scripting for Networking</span>
               <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
                 Details <i class="fas fa-chevron-down ml-1"></i>
               </button>
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">About:</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
-                    <li></li>
-                    <li></li> 
-                    <li></li>
+                    <li>Working with the shell</li>
+                    <li>Networking with `socket`</li> 
+                    <li>Automation with `paramiko` for SSH</li>
                 </ul>
               </div>
             </div>
@@ -428,7 +458,7 @@
             </h3>
             <div class="flex flex-wrap justify-around">
               <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-                <div class="circular-progress" data-percent="1"> <span class="progress-value">1%</span></div>
+                <div class="circular-progress" data-percent="20"> <span class="progress-value">20%</span></div>
                 <span class="skill-name">Reconnaissance</span>
                 <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
                   Details <i class="fas fa-chevron-down ml-1"></i>
@@ -437,15 +467,14 @@
                   <strong class="font-semibold block mb-2">Tools & Techniques:</strong>
                   <ul class="list-disc list-inside text-sm space-y-1">
                       <li>Nmap (basic scans)</li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
+                      <li>WHOIS lookups</li>
+                      <li>Google Dorking</li>
+                      <li>TheHarvester (basics)</li>
                   </ul>
                 </div>
               </div>
               <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-                <div class="circular-progress" data-percent="0"> <span class="progress-value">0%</span></div>
+                <div class="circular-progress" data-percent="15"> <span class="progress-value">15%</span></div>
                 <span class="skill-name">Scanning</span>
                 <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
                   Details <i class="fas fa-chevron-down ml-1"></i>
@@ -453,14 +482,14 @@
                 <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                   <strong class="font-semibold block mb-2">Tools & Techniques:</strong>
                   <ul class="list-disc list-inside text-sm space-y-1">
-                      <li></li>
-                      <li></li>
-                      <li></li>
+                      <li>Nmap (port scanning)</li>
+                      <li>Vulnerability Scanners (conceptual)</li>
+                      <li>Enum4linux (basic enumeration)</li>
                   </ul>
                 </div>
               </div>
               <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-                <div class="circular-progress" data-percent="0"> <span class="progress-value">0%</span></div>
+                <div class="circular-progress" data-percent="10"> <span class="progress-value">10%</span></div>
                 <span class="skill-name">Gaining Access</span>
                 <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
                   Details <i class="fas fa-chevron-down ml-1"></i>
@@ -468,37 +497,9 @@
                 <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                   <strong class="font-semibold block mb-2">Concepts & Tools:</strong>
                   <ul class="list-disc list-inside text-sm space-y-1">
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                  </ul>
-                </div>
-              </div>
-               <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-                <div class="circular-progress" data-percent="0"> <span class="progress-value">0%</span></div>
-                <span class="skill-name">Maintaining Access</span>
-                <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                  Details <i class="fas fa-chevron-down ml-1"></i>
-                </button>
-                <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
-                  <strong class="font-semibold block mb-2">Concepts:</strong>
-                  <ul class="list-disc list-inside text-sm space-y-1">
-                      <li></li>
-                      <li></li>
-                  </ul>
-                </div>
-              </div>
-               <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-                <div class="circular-progress" data-percent="0"> <span class="progress-value">0%</span></div>
-                <span class="skill-name">Covering Tracks</span>
-                <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                  Details <i class="fas fa-chevron-down ml-1"></i>
-                </button>
-                <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
-                  <strong class="font-semibold block mb-2">Concepts:</strong>
-                  <ul class="list-disc list-inside text-sm space-y-1">
-                      <li></li>
-                      <li></li>
+                      <li>Metasploit Framework (conceptual)</li>
+                      <li>Password Cracking (conceptual)</li>
+                      <li>Exploiting misconfigurations</li>
                   </ul>
                 </div>
               </div>
@@ -510,7 +511,8 @@
     <section id="projects" class="section hidden mt-16">
       <h2 class="text-3xl font-semibold border-b border-gray-700 pb-2 mb-8 text-cyber-blue">Network Security Projects</h2>
       
-      <div class="grid md:grid-cols-2 gap-6"> <div class="cyber-card p-6">
+      <div class="grid md:grid-cols-2 gap-6"> 
+        <div class="cyber-card p-6">
           <div class="flex items-center mb-4">
             <div class="bg-gray-800 p-3 rounded-lg mr-4">
               <i class="fas fa-search-location text-2xl text-cyber-blue"></i>
@@ -532,8 +534,9 @@
         <div class="cyber-card p-6">
           <div class="flex items-center mb-4">
             <div class="bg-gray-800 p-3 rounded-lg mr-4">
-              <i class="fas fa-shield-virus text-2xl text-cyber-blue"></i> </div>
-            <h3 class="text-xl font-bold text-cyber-light-text">Next Generation IDS/IPS</h3>
+              <i class="fas fa-shield-virus text-2xl text-cyber-blue"></i>
+            </div>
+            <h3 class="text-xl font-bold text-cyber-light-text">IDS/IPS System Using Suricata</h3>
           </div>
           <p class="text-cyber-dim-text mb-4">
             Developing and configuring an Intrusion Detection and Prevention System (IDS/IPS) utilizing Suricata to monitor network traffic, detect malicious activities, and enforce security policies.
@@ -643,7 +646,6 @@
   </footer>
 
   <script>
-    // --- Existing Script Content ---
     let currentSection = document.getElementById('home');
 
     function showSection(sectionId) {
@@ -704,28 +706,24 @@
     }
 
     function animateCounters() {
-      // Check if already animated to target values
-      const monthsExpEl = document.getElementById('monthsExperience');
-      const projectsCompEl = document.getElementById('projectsCompleted'); // Updated to 2 projects
-      const cvesResEl = document.getElementById('cvesResearched');
+      const projectsStartedEl = document.getElementById('projectsStarted');
+      const projectsCompletedEl = document.getElementById('projectsCompleted');
+      const certsCompletedEl = document.getElementById('certsCompleted');
       const toolsMasteredEl = document.getElementById('toolsMastered');
 
-      if (monthsExpEl.dataset.animated === "true" && parseInt(monthsExpEl.textContent) === 3 &&
-          projectsCompEl.dataset.animated === "true" && parseInt(projectsCompEl.textContent) === 2 && // Target 2 projects
-          cvesResEl.dataset.animated === "true" && parseInt(cvesResEl.textContent) === 0 &&
-          toolsMasteredEl.dataset.animated === "true" && parseInt(toolsMasteredEl.textContent) === 5) {
-         return;
-      }
-      // Reset animation flags
-      monthsExpEl.dataset.animated = "false";
-      projectsCompEl.dataset.animated = "false";
-      cvesResEl.dataset.animated = "false";
-      toolsMasteredEl.dataset.animated = "false";
+      // Check if already animated to target values
+      if (projectsStartedEl.dataset.animated === "true") return;
 
-      animateCounter("monthsExperience", 0, 2, 1200); 
-      animateCounter("projectsCompleted", 200, 0, 1200);  // Updated to 1 since one project remains
-      animateCounter("cvesResearched", 5, 1, 1200);    
-      animateCounter("toolsMastered", 100, 0, 1200);   
+      // Reset animation flags before starting
+      projectsStartedEl.dataset.animated = "false";
+      projectsCompletedEl.dataset.animated = "false";
+      certsCompletedEl.dataset.animated = "false";
+      toolsMasteredEl.dataset.animated = "false";
+      
+      animateCounter("projectsStarted", 0, 1, 1200);
+      animateCounter("projectsCompleted", 200, 0, 1200); 
+      animateCounter("certsCompleted", 5, 1, 1200);    
+      animateCounter("toolsMastered", 100, 0, 1200);    
     }
 
     function isElementInViewport(el) {
@@ -820,14 +818,14 @@
       'ids-ips-suricata': {
         title: 'IDS/IPS System Using Suricata',
         images: [
-          'Suricata 4.jpg',
-          'Suricata 2.jpg',
-          'Suricata 3.png',
+          'images/Suricata 4.jpg',
+          'images/Suricata 2.jpg',
+          'images/Suricata 3.png'
         ],
         description: 'Developing an Intrusion Detection and Prevention System (IDS/IPS) utilizing Suricata. This project will setting up Suricata on a Linux environment, writing custom rules to detect specific network threats, and integrating it with logging and alerting mechanisms like the ELK Stack (Elasticsearch, Logstash, Kibana) for visualizing security events. The system will effectively monitor network traffic for malicious patterns, anomalies, and policy violations, providing real-time alerts and, in IPS mode, the capability to block threats.',
         technologies: ['GNS3', 'Linux', 'Network Security', 'Cybersecurity', 'Rule Writing', 'ELK Stack (Conceptual)', 'IDS/IPS(Suricata)'],
         liveLink: null,
-        repoLink: 'https://github.com/yourusername/suricata-ids-ips' // Replace with your actual repo link
+        repoLink: 'https://github.com/yourusername/suricata-ids-ips' 
       }
     };
 
@@ -842,16 +840,16 @@
     const modalProjectTech = document.getElementById('modalProjectTech');
     const modalProjectLiveLink = document.getElementById('modalProjectLiveLink');
     const modalProjectRepoLink = document.getElementById('modalProjectRepoLink');
-    const modalImageSliderElement = document.getElementById('modalImageSlider'); // Get the slider element
+    const modalImageSliderElement = document.getElementById('modalImageSlider'); 
 
     let currentSlideIndex = 0;
     let projectImages = [];
     let autoSlideInterval = null;
-    const AUTO_SLIDE_DELAY = 3000; // 3 seconds
+    const AUTO_SLIDE_DELAY = 3000; 
 
     function startAutoSlide() {
-      if (autoSlideInterval) clearInterval(autoSlideInterval); // Clear existing interval
-      if (projectImages.length <= 1) return; // Don't auto-slide if only one or no images
+      if (autoSlideInterval) clearInterval(autoSlideInterval); 
+      if (projectImages.length <= 1) return; 
 
       autoSlideInterval = setInterval(() => {
         currentSlideIndex = (currentSlideIndex + 1) % projectImages.length;
@@ -866,7 +864,6 @@
     
     function resetAutoSlide() {
         stopAutoSlide();
-        // Only restart if modal is still open and there are multiple images
         if (!modalElement.classList.contains('hidden') && projectImages.length > 1) {
             startAutoSlide();
         }
@@ -911,7 +908,6 @@
       if (projectImages.length > 0) {
         projectImages.forEach((imgSrc, index) => {
           const imgDiv = document.createElement('div');
-          // slider-image-container was the new class name
           imgDiv.className = 'slider-image-container flex-shrink-0 w-full h-full flex items-center justify-center'; 
           const img = document.createElement('img');
           img.src = imgSrc;
@@ -926,13 +922,13 @@
           dot.dataset.slideIndex = index;
           dot.addEventListener('click', () => {
             showSlide(index);
-            resetAutoSlide(); // Reset auto-slide on manual dot click
+            resetAutoSlide(); 
           });
           sliderDotsContainer.appendChild(dot);
         });
         currentSlideIndex = 0;
         showSlide(currentSlideIndex);
-        startAutoSlide(); // Start auto-sliding when modal is populated
+        startAutoSlide(); 
       }
       updateSliderControls();
       modalElement.classList.remove('hidden');
@@ -956,39 +952,34 @@
             prevSlideButton.classList.add('hidden');
             nextSlideButton.classList.add('hidden');
             sliderDotsContainer.classList.add('hidden');
-            stopAutoSlide(); // Stop auto-slide if not enough images
+            stopAutoSlide(); 
         } else {
             prevSlideButton.classList.remove('hidden');
             nextSlideButton.classList.remove('hidden');
             sliderDotsContainer.classList.remove('hidden');
-            prevSlideButton.disabled = currentSlideIndex === 0;
-            nextSlideButton.disabled = currentSlideIndex === projectImages.length - 1;
+            prevSlideButton.disabled = false; // Always enable for looping
+            nextSlideButton.disabled = false; // Always enable for looping
         }
     }
 
     prevSlideButton.addEventListener('click', () => {
-      if (currentSlideIndex > 0) {
-        showSlide(currentSlideIndex - 1);
-        resetAutoSlide(); // Reset auto-slide on manual prev click
-      }
+      currentSlideIndex = (currentSlideIndex - 1 + projectImages.length) % projectImages.length;
+      showSlide(currentSlideIndex);
+      resetAutoSlide(); 
     });
 
     nextSlideButton.addEventListener('click', () => {
-      if (currentSlideIndex < projectImages.length - 1) {
-        showSlide(currentSlideIndex + 1);
-        resetAutoSlide(); // Reset auto-slide on manual next click
-      }
+      currentSlideIndex = (currentSlideIndex + 1) % projectImages.length;
+      showSlide(currentSlideIndex);
+      resetAutoSlide(); 
     });
     
-    // Pause auto-slide on hover
     modalImageSliderElement.addEventListener('mouseenter', stopAutoSlide);
     modalImageSliderElement.addEventListener('mouseleave', () => {
-        // Only restart if modal is still open and there are multiple images
         if (!modalElement.classList.contains('hidden') && projectImages.length > 1) {
             startAutoSlide();
         }
     });
-
 
     function openProjectModal(projectId) {
         populateModal(projectId);
@@ -997,7 +988,7 @@
     function closeProjectModal() {
       modalElement.classList.add('hidden');
       document.body.style.overflow = 'auto'; 
-      stopAutoSlide(); // Stop auto-sliding when modal is closed
+      stopAutoSlide(); 
     }
 
     closeModalButton.addEventListener('click', closeProjectModal);
