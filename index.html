@@ -10,39 +10,21 @@
   <!-- Standard SEO description -->
   <meta name="description" content="Portfolio for Innocent Zivare, a cybersecurity student specializing in networking, Python, and ethical hacking." />
   
+  <!-- Favicon Links -->
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="shortcut icon" href="favicon.ico">
-  <!-- =================================================================== -->
+  
   <!-- LINKEDIN & SOCIAL MEDIA SHARING TAGS -->
-  <!-- =================================================================== -->
-  
-  <!-- og:title: The title that will appear in the LinkedIn preview. -->
   <meta property="og:title" content="Innocent Zivare | Cybersecurity Portfolio" />
-  
-  <!-- og:description: The description that will appear in the preview. -->
   <meta property="og:description" content="Portfolio for Innocent Zivare, a cybersecurity student specializing in networking, Python, and ethical hacking." />
-  
-  <!-- og:image: The URL for the preview image.
-       - MUST BE a full, direct URL (e.g., https://...).
-       - Recommended dimensions: 1200x630 pixels (1.91:1 ratio).
-       - MUST BE a JPG, PNG, or GIF file under 5 MB.
-  -->
   <meta name="image" property="og:image" content="https://inno5o.pages.dev/ogimage.png">
-  
-  <!-- og:url: The full, canonical URL to your live portfolio. -->
   <meta property="og:url" content="https://inno5o.pages.dev" />
-  
-  <!-- og:type: Tells social networks this is a website. -->
   <meta property="og:type" content="website" />
-
   <meta name="author" content="Innocent Zivare">
-
   <meta property="article:publish_date" content="2025-06-14T00:00:00Z" />
   
-  <!-- =================================================================== -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Aptos&display=swap" rel="stylesheet">
@@ -54,7 +36,7 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['Inter', 'Aptos', 'sans-serif'], // Prioritizing Inter
+            sans: ['Inter', 'Aptos', 'sans-serif'],
           },
           colors: {
             'cyber-blue': '#00f0ff',
@@ -75,8 +57,8 @@
     }
     body {
       font-family: 'Inter', 'Aptos', sans-serif; 
-      background-color: #0a192f; /* cyber-dark */
-      color: #ccd6f6; /* cyber-light-text */
+      background-color: #0a192f;
+      color: #ccd6f6;
     }
     .fade-enter {
       opacity: 0;
@@ -96,7 +78,7 @@
       color: #00f0ff; 
       border: 1px solid #00f0ff; 
       padding: 0.4rem 1rem;
-      border-radius: 0.375rem; /* rounded-md */
+      border-radius: 0.375rem;
       background-color: transparent;
       transition: all 0.3s;
       box-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff; 
@@ -110,7 +92,7 @@
       color: #00f0ff; 
       border: 1px solid rgba(0, 240, 255, 0.5); 
       padding: 0.25rem 0.75rem; 
-      border-radius: 0.375rem; /* rounded-md */
+      border-radius: 0.375rem;
       background-color: transparent;
       font-size: 0.75rem; 
       transition: all 0.3s;
@@ -122,20 +104,12 @@
       box-shadow: 0 0 6px #00f0ff; 
       border-color: #00f0ff;
     }
-    .neon-icon {
-      color: #00f0ff; 
-      transition: all 0.3s;
-      text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff; 
-    }
-    .neon-icon:hover {
-      text-shadow: 0 0 10px #00f0ff, 0 0 20px #00f0ff; 
-    }
     .cyber-card {
       background: rgba(0, 0, 20, 0.5); 
       border: 1px solid rgba(0, 240, 255, 0.2); 
       backdrop-filter: blur(5px);
       transition: all 0.3s;
-      border-radius: 0.75rem; /* rounded-xl */
+      border-radius: 0.75rem;
     }
     .cyber-card:hover {
       border-color: #00f0ff; 
@@ -159,19 +133,19 @@
       height: 100px;
       width: 100px;
       border-radius: 50%;
-      background-color: #0a192f; /* cyber-dark */
+      background-color: #0a192f;
     }
     .progress-value {
       position: relative;
       font-size: 28px;
       font-weight: 600;
-      color: #00f0ff; /* cyber-blue */
+      color: #00f0ff;
     }
     .skill-name { 
       margin-top: 10px;
       font-size: 14px;
       font-weight: 500;
-      color: #ccd6f6; /* cyber-light-text */
+      color: #ccd6f6;
       text-align: center;
     }
     .skill-item { 
@@ -184,8 +158,8 @@
     .skill-detail { 
       background-color: rgba(17, 24, 39, 0.7); 
       border: 1px solid rgba(0, 240, 255, 0.3); 
-      border-radius: 0.5rem; /* rounded-lg */
-      color: #ccd6f6; /* cyber-light-text */
+      border-radius: 0.5rem;
+      color: #ccd6f6;
       text-align: left;
       box-shadow: 0 4px 10px rgba(0,0,0,0.3);
       width: 100%; 
@@ -195,8 +169,6 @@
         outline: 2px solid #00f0ff; 
         outline-offset: 2px;
     }
-
-    /* Project Modal Styles */
     .modal {
         transition: opacity 0.3s ease, visibility 0.3s ease;
     }
@@ -225,7 +197,6 @@
     .slider-dot.active {
         background-color: #00f0ff; 
     }
-
   </style>
 </head>
 
@@ -270,7 +241,7 @@
             </div>
             <div class="cyber-card p-4 rounded-lg">
               <p id="certsCompleted" class="text-3xl font-bold text-center text-cyber-blue">0</p>
-              <p class="text-cyber-dim-text text-center text-sm">Certifications Completed</p>
+              <p class="text-cyber-dim-text text-center text-sm">Certifications In Progress</p>
             </div>
             <div class="cyber-card p-4 rounded-lg">
               <p id="toolsMastered" class="text-3xl font-bold text-center text-cyber-blue">0</p>
@@ -281,21 +252,18 @@
       </div>
     </section>
 
-      <section id="skills" class="section hidden mt-16">
+    <section id="skills" class="section hidden mt-16">
       <h2 class="text-3xl font-semibold border-b border-gray-700 pb-2 mb-8 text-cyber-blue">Technical Skills</h2>
-      
       <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6"> 
         <div class="cyber-card p-6">
           <h3 class="text-xl font-bold mb-6 flex items-center text-cyber-blue">
             <i class="fas fa-shield-alt mr-3"></i> Networking 
           </h3>
           <div class="flex flex-wrap justify-around"> 
-            <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto"> <div class="circular-progress" data-percent="90"> <span class="progress-value">90%</span>
-              </div>
+            <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
+              <div class="circular-progress" data-percent="90"> <span class="progress-value">90%</span></div>
               <span class="skill-name">Basics</span>
-              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                Details <i class="fas fa-chevron-down ml-1"></i>
-              </button>
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">Details <i class="fas fa-chevron-down ml-1"></i></button>
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">Network Fundamentals and Access:</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
@@ -305,13 +273,10 @@
                 </ul>
               </div>
             </div>
-            
             <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-              <div class="circular-progress" data-percent="80"> <span class="progress-value">80%</span> </div>
+              <div class="circular-progress" data-percent="80"> <span class="progress-value">80%</span></div>
               <span class="skill-name">The Internet Protocol</span>
-              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                Details<i class="fas fa-chevron-down ml-1"></i>
-              </button>
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">Details<i class="fas fa-chevron-down ml-1"></i></button>
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">IP Connectivity & Services</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
@@ -322,14 +287,10 @@
                 </ul>
               </div>
             </div>
-
             <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-              <div class="circular-progress" data-percent="40">
-                <span class="progress-value">40%</span>
-              </div>
-              <span class="skill-name">Security, Automation & Prog.</span> <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                Details <i class="fas fa-chevron-down ml-1"></i>
-              </button>
+              <div class="circular-progress" data-percent="40"><span class="progress-value">40%</span></div>
+              <span class="skill-name">Security, Automation & Prog.</span>
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">Details <i class="fas fa-chevron-down ml-1"></i></button>
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">Basics</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
@@ -341,25 +302,18 @@
             </div>
           </div>
         </div>
-        
         <div class="cyber-card p-6">
-          <h3 class="text-xl font-bold mb-6 flex items-center text-cyber-blue">
-            <i class="fas fa-terminal mr-3"></i> Linux 
-          </h3>
+          <h3 class="text-xl font-bold mb-6 flex items-center text-cyber-blue"><i class="fas fa-terminal mr-3"></i> Linux</h3>
           <div class="flex flex-wrap justify-around">
             <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-              <div class="circular-progress" data-percent="90">
-                <span class="progress-value">90%</span>
-              </div>
+              <div class="circular-progress" data-percent="90"><span class="progress-value">90%</span></div>
               <span class="skill-name">Basic Commands</span>
-              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                Details<i class="fas fa-chevron-down ml-1"></i>
-              </button>
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">Details<i class="fas fa-chevron-down ml-1"></i></button>
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">Basic Commands:</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
-                    <li>Navigaton: ls, cd, pwd.</li>
-                    <li>File Ops: cp, mv, rm, mkfir, rmdir</li>
+                    <li>Navigation: ls, cd, pwd</li>
+                    <li>File Ops: cp, mv, rm, mkdir</li>
                     <li>Viewing Files: cat, less, head, tail</li>
                     <li>Permissions: chmod, chown, chgrp</li>
                     <li>Searching: find, grep</li>
@@ -367,176 +321,119 @@
               </div>
             </div>
             <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-              <div class="circular-progress" data-percent="10"> <span class="progress-value">10%</span>
-              </div>
+              <div class="circular-progress" data-percent="10"><span class="progress-value">10%</span></div>
               <span class="skill-name">Intermediate User Tasks</span>
-              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                Details<i class="fas fa-chevron-down ml-1"></i>
-              </button>
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">Details<i class="fas fa-chevron-down ml-1"></i></button>
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">Notes:</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
-                    <li>Package Management: apt (update, install, remove)</li>
-                    <li>Users & Groups: Creating/deleting users (kill, pkill, killall</li>
-                    <li>Process Managemnt: Viewing, Signals, Background jobs(&, jobs, fg, bg, nohup</li>
-                    <li>Filesystem & Storage: Mounting (unmount, df, du); Permissions deep dive (SUID, SGID, sticky bit</li>
+                    <li>Package Management: apt</li>
+                    <li>Process Management: ps, kill, nohup</li>
+                    <li>Storage: df, du, mount</li>
+                    <li>Users & Groups: useradd, usermod</li>
                 </ul>
               </div>
             </div>
             <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto"> 
-              <div class="circular-progress" data-percent="10">
-                <span class="progress-value">10%</span>
-              </div>
+              <div class="circular-progress" data-percent="5"><span class="progress-value">5%</span></div>
               <span class="skill-name">System Administration</span>
-              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                Details<i class="fas fa-chevron-down ml-1"></i>
-              </button>
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">Details<i class="fas fa-chevron-down ml-1"></i></button>
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">System Administration Notes:</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
-                    <li>Networking (ifconfig/ip, netstat); DNS(/etc/hosts, resolv.conf); SSH: key-based auth, tunneling, scp</li>
-                    <li>Security Basics (Firewall: ufw, iptable/nftable), SSH hardening(change port)</li>
-                    <li>Backup & Recovery: tar, rsync, snapshots</li>
+                    <li>Networking: ifconfig/ip, netstat</li>
+                    <li>SSH: key-based auth, tunneling, scp</li>
+                    <li>Security Basics: ufw, iptables</li>
+                    <li>Backup & Recovery: tar, rsync</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-        
         <div class="cyber-card p-6">
-          <h3 class="text-xl font-bold mb-6 flex items-center text-cyber-blue">
-            <i class="fab fa-python mr-3"></i> Python Programming
-          </h3>
+          <h3 class="text-xl font-bold mb-6 flex items-center text-cyber-blue"><i class="fab fa-python mr-3"></i> Python Programming</h3>
           <div class="flex flex-wrap justify-around">
             <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-              <div class="circular-progress" data-percent="80"> <span class="progress-value">80%</span>
-              </div>
+              <div class="circular-progress" data-percent="80"><span class="progress-value">80%</span></div>
               <span class="skill-name">Core Syntax</span>
-              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                Details <i class="fas fa-chevron-down ml-1"></i>
-              </button>
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">Details <i class="fas fa-chevron-down ml-1"></i></button>
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">Foundations</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
-                    <li>Core Syntax</li>
-                    <li>Control Flow: Conditionals(if, elif, else); Loops(for, while); Comprehensions</li>
-                    <li>Collections: Tuples, Lists, Sets, Dictionaties</li>
+                    <li>Core Syntax & Data Types</li>
+                    <li>Control Flow: if/else, for/while</li>
+                    <li>Collections: Lists, Dictionaries, Sets</li>
                 </ul>
               </div>
             </div>
             <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-              <div class="circular-progress" data-percent="5"> <span class="progress-value">5%</span>
-              </div>
+              <div class="circular-progress" data-percent="10"><span class="progress-value">10%</span></div>
               <span class="skill-name">Intermediate</span>
-              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                Details <i class="fas fa-chevron-down ml-1"></i>
-              </button>
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">Details <i class="fas fa-chevron-down ml-1"></i></button>
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">About:</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
                     <li>Functions & Modules</li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>File I/O & Exceptions</li>
+                    <li>Object-Oriented Programming (OOP)</li>
                 </ul>
               </div>
             </div>
             <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-              <div class="circular-progress" data-percent="1"> <span class="progress-value">1%</span>
-              </div>
-              <span class="skill-name">Scripting for Networking & Automation</span>
-              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                Details <i class="fas fa-chevron-down ml-1"></i>
-              </button>
+              <div class="circular-progress" data-percent="5"><span class="progress-value">5%</span></div>
+              <span class="skill-name">Scripting for Networking</span>
+              <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">Details <i class="fas fa-chevron-down ml-1"></i></button>
               <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                 <strong class="font-semibold block mb-2">About:</strong>
                 <ul class="list-disc list-inside text-sm space-y-1">
-                    <li></li>
-                    <li></li> 
-                    <li></li>
+                    <li>Working with the shell</li>
+                    <li>Networking with `socket`</li> 
+                    <li>Automation with `paramiko` for SSH</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
-
         <div class="cyber-card p-6">
-            <h3 class="text-xl font-bold mb-6 flex items-center text-cyber-blue">
-              <i class="fas fa-user-secret mr-3"></i> Ethical Hacking
-            </h3>
+            <h3 class="text-xl font-bold mb-6 flex items-center text-cyber-blue"><i class="fas fa-user-secret mr-3"></i> Ethical Hacking</h3>
             <div class="flex flex-wrap justify-around">
               <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-                <div class="circular-progress" data-percent="1"> <span class="progress-value">1%</span></div>
+                <div class="circular-progress" data-percent="20"><span class="progress-value">20%</span></div>
                 <span class="skill-name">Reconnaissance</span>
-                <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                  Details <i class="fas fa-chevron-down ml-1"></i>
-                </button>
+                <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">Details <i class="fas fa-chevron-down ml-1"></i></button>
                 <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                   <strong class="font-semibold block mb-2">Tools & Techniques:</strong>
                   <ul class="list-disc list-inside text-sm space-y-1">
                       <li>Nmap (basic scans)</li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
+                      <li>WHOIS lookups</li>
+                      <li>Google Dorking</li>
+                      <li>TheHarvester (basics)</li>
                   </ul>
                 </div>
               </div>
               <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-                <div class="circular-progress" data-percent="0"> <span class="progress-value">0%</span></div>
+                <div class="circular-progress" data-percent="15"><span class="progress-value">15%</span></div>
                 <span class="skill-name">Scanning</span>
-                <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                  Details <i class="fas fa-chevron-down ml-1"></i>
-                </button>
+                <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">Details <i class="fas fa-chevron-down ml-1"></i></button>
                 <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                   <strong class="font-semibold block mb-2">Tools & Techniques:</strong>
                   <ul class="list-disc list-inside text-sm space-y-1">
-                      <li></li>
-                      <li></li>
-                      <li></li>
+                      <li>Nmap (port scanning)</li>
+                      <li>Vulnerability Scanners (conceptual)</li>
+                      <li>Enum4linux (basic enumeration)</li>
                   </ul>
                 </div>
               </div>
               <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-                <div class="circular-progress" data-percent="0"> <span class="progress-value">0%</span></div>
+                <div class="circular-progress" data-percent="10"><span class="progress-value">10%</span></div>
                 <span class="skill-name">Gaining Access</span>
-                <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                  Details <i class="fas fa-chevron-down ml-1"></i>
-                </button>
+                <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">Details <i class="fas fa-chevron-down ml-1"></i></button>
                 <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
                   <strong class="font-semibold block mb-2">Concepts & Tools:</strong>
                   <ul class="list-disc list-inside text-sm space-y-1">
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                  </ul>
-                </div>
-              </div>
-               <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-                <div class="circular-progress" data-percent="0"> <span class="progress-value">0%</span></div>
-                <span class="skill-name">Maintaining Access</span>
-                <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                  Details <i class="fas fa-chevron-down ml-1"></i>
-                </button>
-                <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
-                  <strong class="font-semibold block mb-2">Concepts:</strong>
-                  <ul class="list-disc list-inside text-sm space-y-1">
-                      <li></li>
-                      <li></li>
-                  </ul>
-                </div>
-              </div>
-               <div class="skill-item w-full sm:w-1/2 md:w-1/3 lg:w-auto">
-                <div class="circular-progress" data-percent="0"> <span class="progress-value">0%</span></div>
-                <span class="skill-name">Covering Tracks</span>
-                <button type="button" class="skill-note-button mt-2 focusable" onclick="toggleSkillDetail(this)" aria-expanded="false">
-                  Details <i class="fas fa-chevron-down ml-1"></i>
-                </button>
-                <div class="skill-detail hidden w-full max-w-md mx-auto mt-3 p-4">
-                  <strong class="font-semibold block mb-2">Concepts:</strong>
-                  <ul class="list-disc list-inside text-sm space-y-1">
-                      <li></li>
-                      <li></li>
+                      <li>Metasploit Framework (conceptual)</li>
+                      <li>Password Cracking (conceptual)</li>
+                      <li>Exploiting misconfigurations</li>
                   </ul>
                 </div>
               </div>
@@ -547,18 +444,13 @@
 
     <section id="projects" class="section hidden mt-16">
       <h2 class="text-3xl font-semibold border-b border-gray-700 pb-2 mb-8 text-cyber-blue">Network Security Projects</h2>
-      
       <div class="grid md:grid-cols-2 gap-6"> 
         <div class="cyber-card p-6">
           <div class="flex items-center mb-4">
-            <div class="bg-gray-800 p-3 rounded-lg mr-4">
-              <i class="fas fa-search-location text-2xl text-cyber-blue"></i>
-            </div>
+            <div class="bg-gray-800 p-3 rounded-lg mr-4"><i class="fas fa-search-location text-2xl text-cyber-blue"></i></div>
             <h3 class="text-xl font-bold text-cyber-light-text">Network Monitoring Tool</h3>
           </div>
-          <p class="text-cyber-dim-text mb-4">
-            A lightweight Real-Time Network Monitoring System for Detecting Unauthorized Devices on Local Networks using Python and Scapy.
-          </p>
+          <p class="text-cyber-dim-text mb-4">A lightweight Real-Time Network Monitoring System for Detecting Unauthorized Devices on Local Networks using Python and Scapy.</p>
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text">AI (Future Scope)</span>
             <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text">Python</span>
@@ -567,17 +459,12 @@
           </div>
           <button type="button" class="neon-button inline-block text-sm focusable view-details-btn" data-project-id="network-monitoring-tool">View Details</button>
         </div>
-
         <div class="cyber-card p-6">
           <div class="flex items-center mb-4">
-            <div class="bg-gray-800 p-3 rounded-lg mr-4">
-              <i class="fas fa-shield-virus text-2xl text-cyber-blue"></i>
-            </div>
+            <div class="bg-gray-800 p-3 rounded-lg mr-4"><i class="fas fa-shield-virus text-2xl text-cyber-blue"></i></div>
             <h3 class="text-xl font-bold text-cyber-light-text">IDS/IPS System Using Suricata</h3>
           </div>
-          <p class="text-cyber-dim-text mb-4">
-            Developing and configuring an Intrusion Detection and Prevention System (IDS/IPS) utilizing Suricata to monitor network traffic, detect malicious activities, and enforce security policies.
-          </p>
+          <p class="text-cyber-dim-text mb-4">Developing and configuring an Intrusion Detection and Prevention System (IDS/IPS) utilizing Suricata to monitor network traffic, detect malicious activities, and enforce security policies.</p>
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text">Suricata</span>
             <span class="px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text">Network Security</span>
@@ -591,11 +478,10 @@
 
     <section id="certifications" class="section hidden mt-16">
       <h2 class="text-3xl font-semibold border-b border-gray-700 pb-2 mb-8 text-cyber-blue">Certifications</h2>
-      
       <div class="space-y-6">
         <div class="cyber-card p-6 flex flex-col sm:flex-row items-start">
-          <img src="CCNA.jpg" alt="CCNA Certification Logo" class="w-20 h-20 object-contain mr-0 mb-4 sm:mr-6 sm:mb-0 rounded-lg border border-cyber-blue" onerror="this.src='https://placehold.co/80x80/0a192f/00f0ff?text=Cert'; this.alt='Certification Placeholder'">
-          <div>
+          <img src="images/CCNA.jpg" alt="CCNA Certification Logo" class="w-20 h-20 object-contain mr-0 mb-4 sm:mr-6 sm:mb-0 rounded-lg border border-cyber-blue" onerror="this.src='https://placehold.co/80x80/0a192f/00f0ff?text=Cert'; this.alt='Certification Placeholder'">
+          <div class="flex-grow">
             <h3 class="text-xl font-bold text-cyber-light-text">Cisco Certified Network Associate (CCNA) - In Progress</h3>
             <p class="text-cyber-dim-text mt-1">Expected completion: August 2025</p>
             <p class="text-cyber-light-text mt-2 text-sm">Focusing on fundamental networking concepts, IP connectivity, security fundamentals, and automation.</p>
@@ -607,7 +493,6 @@
 
     <section id="contact" class="section hidden mt-16">
       <h2 class="text-3xl font-semibold border-b border-gray-700 pb-2 mb-8 text-cyber-blue">Get In Touch</h2>
-      
       <div class="grid md:grid-cols-2 gap-8">
         <div class="cyber-card p-6">
           <h3 class="text-xl font-bold mb-6 text-cyber-blue">Contact Information</h3>
@@ -622,13 +507,14 @@
             </div>
             <div class="flex items-center">
               <i class="fab fa-github text-cyber-blue mr-4 text-xl"></i>
-              <a href="https://github.com/thatsyou" target="_blank" rel="noopener noreferrer" class="hover:text-cyber-blue transition text-cyber-light-text focusable">github</a> </div>
+              <a href="https://github.com/inno5o" target="_blank" rel="noopener noreferrer" class="hover:text-cyber-blue transition text-cyber-light-text focusable">github</a>
+            </div>
           </div>
         </div>
-        
         <div class="cyber-card p-6">
           <h3 class="text-xl font-bold mb-6 text-cyber-blue">Send a Message</h3>
-          <form class="space-y-4" action="https://formspree.io/f/YOUR_UNIQUE_FORM_ID" method="POST"> <div>
+          <form class="space-y-4" action="https://formspree.io/f/YOUR_UNIQUE_FORM_ID" method="POST">
+            <div>
               <label for="name" class="block text-cyber-dim-text mb-1 text-sm">Name</label>
               <input type="text" id="name" name="name" class="w-full bg-gray-800 border border-gray-700 rounded px-4 py-2 focus:border-cyber-blue focus:outline-none focus:ring-1 focus:ring-cyber-blue text-cyber-light-text focusable">
             </div>
@@ -650,26 +536,18 @@
   <div id="projectModal" class="modal fixed inset-0 bg-cyber-dark bg-opacity-90 backdrop-blur-md flex items-center justify-center p-4 hidden z-50">
     <div class="cyber-card p-6 sm:p-8 rounded-xl max-w-3xl w-full modal-content overflow-y-auto relative shadow-2xl shadow-cyber-blue/30">
       <button id="closeModalButton" aria-label="Close modal" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-cyber-dim-text hover:text-cyber-blue transition-colors text-3xl sm:text-4xl focusable z-10">&times;</button>
-      
       <h3 id="modalProjectTitle" class="text-2xl sm:text-3xl font-bold text-cyber-blue mb-4 sm:mb-6">Project Title</h3>
-
       <div id="modalImageSlider" class="relative mb-6 rounded-lg overflow-hidden bg-cyber-dark/50 aspect-video">
-        <div id="sliderImagesContainer" class="flex transition-transform duration-500 ease-in-out h-full">
-          </div>
-        <button id="prevSlide" aria-label="Previous image" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60 focusable disabled:opacity-50 disabled:cursor-not-allowed"><i class="fas fa-chevron-left"></i></button>
-        <button id="nextSlide" aria-label="Next image" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60 focusable disabled:opacity-50 disabled:cursor-not-allowed"><i class="fas fa-chevron-right"></i></button>
-        <div id="sliderDots" class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          </div>
+        <div class="slider-images-container flex transition-transform duration-500 ease-in-out h-full"></div>
+        <button aria-label="Previous image" class="slider-prev-btn absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60 focusable disabled:opacity-50 disabled:cursor-not-allowed"><i class="fas fa-chevron-left"></i></button>
+        <button aria-label="Next image" class="slider-next-btn absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60 focusable disabled:opacity-50 disabled:cursor-not-allowed"><i class="fas fa-chevron-right"></i></button>
+        <div class="slider-dots-container absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2"></div>
       </div>
-
       <div class="prose prose-sm sm:prose-base max-w-none text-cyber-light-text mb-4 sm:mb-6 leading-relaxed">
         <p id="modalProjectDescription">Detailed project description...</p>
       </div>
-      
       <h4 class="text-lg sm:text-xl font-semibold text-cyber-blue mb-2">Technologies Used:</h4>
-      <div id="modalProjectTech" class="flex flex-wrap gap-2 mb-6">
-        </div>
-      
+      <div id="modalProjectTech" class="flex flex-wrap gap-2 mb-6"></div>
       <div class="mt-6 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
         <a id="modalProjectLiveLink" href="#" target="_blank" rel="noopener noreferrer" class="neon-button inline-block text-sm focusable hidden text-center">View Live</a>
         <a id="modalProjectRepoLink" href="#" target="_blank" rel="noopener noreferrer" class="neon-button inline-block text-sm focusable hidden text-center">View Documentation</a>
@@ -677,28 +555,21 @@
     </div>
   </div>
 
-  <!-- Certification Labs Modal -->
   <div id="certModal" class="modal fixed inset-0 bg-cyber-dark bg-opacity-90 backdrop-blur-md flex items-center justify-center p-4 hidden z-50">
     <div class="cyber-card p-6 sm:p-8 rounded-xl max-w-3xl w-full modal-content overflow-y-auto relative shadow-2xl shadow-cyber-blue/30">
       <button id="closeCertModalButton" aria-label="Close modal" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-cyber-dim-text hover:text-cyber-blue transition-colors text-3xl sm:text-4xl focusable z-10">&times;</button>
       <h3 id="modalCertTitle" class="text-2xl sm:text-3xl font-bold text-cyber-blue mb-4 sm:mb-6">Certification Labs</h3>
       <div id="modalCertImageSlider" class="relative mb-6 rounded-lg overflow-hidden bg-cyber-dark/50 aspect-video">
-        <div id="certSliderImagesContainer" class="flex transition-transform duration-500 ease-in-out h-full">
-          <!-- Lab images will be added here by JavaScript -->
-        </div>
-        <button id="prevCertSlide" aria-label="Previous image" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60 focusable disabled:opacity-50 disabled:cursor-not-allowed"><i class="fas fa-chevron-left"></i></button>
-        <button id="nextCertSlide" aria-label="Next image" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60 focusable disabled:opacity-50 disabled:cursor-not-allowed"><i class="fas fa-chevron-right"></i></button>
-        <div id="certSliderDots" class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          <!-- Slider dots will be added here by JavaScript -->
-        </div>
+        <div class="slider-images-container flex transition-transform duration-500 ease-in-out h-full"></div>
+        <button aria-label="Previous image" class="slider-prev-btn absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60 focusable disabled:opacity-50 disabled:cursor-not-allowed"><i class="fas fa-chevron-left"></i></button>
+        <button aria-label="Next image" class="slider-next-btn absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60 focusable disabled:opacity-50 disabled:cursor-not-allowed"><i class="fas fa-chevron-right"></i></button>
+        <div class="slider-dots-container absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2"></div>
       </div>
       <div class="prose prose-sm sm:prose-base max-w-none text-cyber-light-text mb-4 sm:mb-6 leading-relaxed">
         <p id="modalCertDescription">Detailed lab description...</p>
       </div>
       <h4 class="text-lg sm:text-xl font-semibold text-cyber-blue mb-2">Skills Demonstrated:</h4>
-      <div id="modalCertSkills" class="flex flex-wrap gap-2 mb-6">
-        <!-- Skills will be added here by JavaScript -->
-      </div>
+      <div id="modalCertSkills" class="flex flex-wrap gap-2 mb-6"></div>
       <div class="mt-6 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
         <a id="modalCertDocLink" href="#" download class="neon-button inline-block text-sm focusable hidden text-center">Download Lab Docs</a>
       </div>
@@ -776,19 +647,17 @@
       const certsCompletedEl = document.getElementById('certsCompleted');
       const toolsMasteredEl = document.getElementById('toolsMastered');
 
-      // Check if already animated to target values
       if (projectsStartedEl.dataset.animated === "true") return;
 
-      // Reset animation flags before starting
       projectsStartedEl.dataset.animated = "false";
       projectsCompletedEl.dataset.animated = "false";
       certsCompletedEl.dataset.animated = "false";
       toolsMasteredEl.dataset.animated = "false";
       
       animateCounter("projectsStarted", 0, 2, 1200);
-      animateCounter("projectsCompleted", 200, 0, 1200); 
-      animateCounter("certsCompleted", 5, 1, 1200);    
-      animateCounter("toolsMastered", 100, 0, 1200);    
+      animateCounter("projectsCompleted", 0, 0, 1200); 
+      animateCounter("certsCompleted", 0, 1, 1200);    
+      animateCounter("toolsMastered", 0, 10, 1200);    
     }
 
     function isElementInViewport(el) {
@@ -866,7 +735,25 @@
       });
     }
 
-    // --- Certification Modal Data ---
+    const projectsData = {
+      'network-monitoring-tool': {
+        title: 'Network Monitoring Tool',
+        images: [ 'images/your_network_tool_image1.png', 'images/your_network_tool_image2.jpg', 'images/your_network_tool_image3.png' ],
+        description: 'This lightweight Real-Time Network Monitoring System, which will be built with Python and Scapy, will be designed to detect unauthorized devices on local networks. It will actively scan the network, identify connected devices by their MAC addresses, and compares them against a list of known devices. If an unrecognized device is found, an alert is triggered. The system will help maintain network integrity by providing visibility into connected devices and flagging potential intruders. Future development plans include integrating machine learning algorithms for more sophisticated anomaly detection and predictive analysis of network behavior.',
+        technologies: ['Python', 'Scapy', 'Networking', 'Security Monitoring', 'AI (Future Scope)'],
+        liveLink: null, 
+        repoLink: 'https://github.com/yourusername/network-monitoring-tool' 
+      },
+      'ids-ips-suricata': {
+        title: 'IDS/IPS System Using Suricata',
+        images: [ 'images/Suricata_4.jpg', 'images/Suricata_2.jpg', 'images/Suricata_3.png' ],
+        description: 'Developing an Intrusion Detection and Prevention System (IDS/IPS) utilizing Suricata. This project will setting up Suricata on a Linux environment, writing custom rules to detect specific network threats, and integrating it with logging and alerting mechanisms like the ELK Stack (Elasticsearch, Logstash, Kibana) for visualizing security events. The system will effectively monitor network traffic for malicious patterns, anomalies, and policy violations, providing real-time alerts and, in IPS mode, the capability to block threats.',
+        technologies: ['GNS3', 'Linux', 'Network Security', 'Cybersecurity', 'Rule Writing', 'ELK Stack (Conceptual)', 'IDS/IPS(Suricata)'],
+        liveLink: null,
+        repoLink: 'https://github.com/yourusername/suricata-ids-ips' 
+      }
+    };
+    
     const certsData = {
         'ccna': {
             title: 'CCNA Practice Labs',
@@ -877,221 +764,134 @@
             ],
             description: 'A collection of hands-on practice labs completed as part of the CCNA curriculum. These labs were built and tested in simulated environments like Cisco Packet Tracer and GNS3 to reinforce theoretical knowledge with practical application. They cover a range of topics from basic device configuration to complex routing and security protocols.',
             skills: ['VLANs & Trunking', 'OSPF Configuration', 'Static Routing', 'Subnetting', 'NAT/PAT', 'Access Control Lists (ACLs)', 'Device Hardening'],
-            docLink: 'docs/ccna_lab_documentation.pdf' // Path to your downloadable document
+            docLink: 'docs/ccna_lab_documentation.pdf'
         }
     };
 
-    // --- Generic Modal Slider Logic ---
-    // This is a large block of code in the full version.
-    // It is better to copy it from the full code in the Canvas.
-    // The key is that this generic function is now used by BOTH modals.
+    function setupSlider(sliderId, images, start) {
+        const sliderElement = document.getElementById(sliderId);
+        if (!sliderElement) return { stop: () => {}, reset: () => {} };
 
-    // ... The setupSlider function ...
-    // --- Project Modal Script ---
-    const projectsData = {
-      'network-monitoring-tool': {
-        title: 'Network Monitoring Tool',
-        images: [
-          'https://placehold.co/800x450/0a192f/00f0ff?text=Monitoring+Dashboard',
-          'https://placehold.co/800x450/0a192f/00f0ff?text=Alert+System',
-          'https://placehold.co/800x450/0a192f/00f0ff?text=Device+List+View'
-        ],
-        description: 'This lightweight Real-Time Network Monitoring System, which will be built with Python and Scapy, will be designed to detect unauthorized devices on local networks. It will actively scan the network, identify connected devices by their MAC addresses, and compares them against a list of known devices. If an unrecognized device is found, an alert is triggered. The system will help maintain network integrity by providing visibility into connected devices and flagging potential intruders. Future development plans include integrating machine learning algorithms for more sophisticated anomaly detection and predictive analysis of network behavior.',
-        technologies: ['Python', 'Scapy', 'Networking', 'Security Monitoring', 'AI (Future Scope)'],
-        liveLink: null, 
-        repoLink: 'https://github.com/yourusername/network-monitoring-tool' 
-      },
-      'ids-ips-suricata': {
-        title: 'IDS/IPS System Using Suricata',
-        images: [
-          'Suricata 4.jpg',
-          'Suricata 2.jpg',
-          'Suricata 3.png'
-        ],
-        description: 'Developing an Intrusion Detection and Prevention System (IDS/IPS) utilizing Suricata. This project will setting up Suricata on a Linux environment, writing custom rules to detect specific network threats, and integrating it with logging and alerting mechanisms like the ELK Stack (Elasticsearch, Logstash, Kibana) for visualizing security events. The system will effectively monitor network traffic for malicious patterns, anomalies, and policy violations, providing real-time alerts and, in IPS mode, the capability to block threats.',
-        technologies: ['GNS3', 'Linux', 'Network Security', 'Cybersecurity', 'Rule Writing', 'ELK Stack (Conceptual)', 'IDS/IPS(Suricata)'],
-        liveLink: null,
-        repoLink: 'https://github.com/yourusername/suricata-ids-ips' 
-      }
-    };
+        const imagesContainer = sliderElement.querySelector('.slider-images-container');
+        const prevButton = sliderElement.querySelector('.slider-prev-btn');
+        const nextButton = sliderElement.querySelector('.slider-next-btn');
+        const dotsContainer = sliderElement.querySelector('.slider-dots-container');
+        
+        let currentIndex = 0;
+        let intervalId = null;
 
-    const modalElement = document.getElementById('projectModal');
-    const closeModalButton = document.getElementById('closeModalButton');
-    const modalProjectTitle = document.getElementById('modalProjectTitle');
-    const sliderImagesContainer = document.getElementById('sliderImagesContainer');
-    const prevSlideButton = document.getElementById('prevSlide');
-    const nextSlideButton = document.getElementById('nextSlide');
-    const sliderDotsContainer = document.getElementById('sliderDots');
-    const modalProjectDescription = document.getElementById('modalProjectDescription');
-    const modalProjectTech = document.getElementById('modalProjectTech');
-    const modalProjectLiveLink = document.getElementById('modalProjectLiveLink');
-    const modalProjectRepoLink = document.getElementById('modalProjectRepoLink');
-    const modalImageSliderElement = document.getElementById('modalImageSlider'); 
+        imagesContainer.innerHTML = '';
+        dotsContainer.innerHTML = '';
 
-    let currentSlideIndex = 0;
-    let projectImages = [];
-    let autoSlideInterval = null;
-    const AUTO_SLIDE_DELAY = 3000; 
+        images.forEach((imgSrc, index) => {
+            const imgDiv = document.createElement('div');
+            imgDiv.className = 'slider-image-container flex-shrink-0 w-full h-full flex items-center justify-center';
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = `Slide ${index + 1}`;
+            img.className = 'max-w-full max-h-full object-contain rounded-md';
+            img.onerror = function() { this.src = 'https://placehold.co/800x450/0a192f/00f0ff?text=Image+Not+Found'; };
+            imgDiv.appendChild(img);
+            imagesContainer.appendChild(imgDiv);
 
-    function startAutoSlide() {
-      if (autoSlideInterval) clearInterval(autoSlideInterval); 
-      if (projectImages.length <= 1) return; 
-
-      autoSlideInterval = setInterval(() => {
-        currentSlideIndex = (currentSlideIndex + 1) % projectImages.length;
-        showSlide(currentSlideIndex);
-      }, AUTO_SLIDE_DELAY);
-    }
-
-    function stopAutoSlide() {
-      clearInterval(autoSlideInterval);
-      autoSlideInterval = null;
-    }
-    
-    function resetAutoSlide() {
-        stopAutoSlide();
-        if (!modalElement.classList.contains('hidden') && projectImages.length > 1) {
-            startAutoSlide();
-        }
-    }
-
-
-    function populateModal(projectId) {
-      const project = projectsData[projectId];
-      if (!project) {
-        console.error('Project data not found for ID:', projectId);
-        return;
-      }
-
-      modalProjectTitle.textContent = project.title;
-      modalProjectDescription.textContent = project.description;
-      
-      modalProjectTech.innerHTML = ''; 
-      project.technologies.forEach(tech => {
-        const span = document.createElement('span');
-        span.className = 'px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text';
-        span.textContent = tech;
-        modalProjectTech.appendChild(span);
-      });
-
-      if (project.liveLink) {
-        modalProjectLiveLink.href = project.liveLink;
-        modalProjectLiveLink.classList.remove('hidden');
-      } else {
-        modalProjectLiveLink.classList.add('hidden');
-      }
-      if (project.repoLink) {
-        modalProjectRepoLink.href = project.repoLink;
-        modalProjectRepoLink.classList.remove('hidden');
-      } else {
-        modalProjectRepoLink.classList.add('hidden');
-      }
-
-      projectImages = project.images;
-      sliderImagesContainer.innerHTML = ''; 
-      sliderDotsContainer.innerHTML = ''; 
-
-      if (projectImages.length > 0) {
-        projectImages.forEach((imgSrc, index) => {
-          const imgDiv = document.createElement('div');
-          imgDiv.className = 'slider-image-container flex-shrink-0 w-full h-full flex items-center justify-center'; 
-          const img = document.createElement('img');
-          img.src = imgSrc;
-          img.alt = `${project.title} - Image ${index + 1}`;
-          img.className = 'max-w-full max-h-full object-contain rounded-md'; 
-          img.onerror = function() { this.src = 'https://placehold.co/600x400/0a192f/00f0ff?text=Image+Not+Found'; };
-          imgDiv.appendChild(img);
-          sliderImagesContainer.appendChild(imgDiv);
-
-          const dot = document.createElement('span');
-          dot.className = 'slider-dot';
-          dot.dataset.slideIndex = index;
-          dot.addEventListener('click', () => {
-            showSlide(index);
-            resetAutoSlide(); 
-          });
-          sliderDotsContainer.appendChild(dot);
+            const dot = document.createElement('span');
+            dot.className = 'slider-dot';
+            dot.addEventListener('click', () => {
+                show((index));
+                reset();
+            });
+            dotsContainer.appendChild(dot);
         });
-        currentSlideIndex = 0;
-        showSlide(currentSlideIndex);
-        startAutoSlide(); 
-      }
-      updateSliderControls();
-      modalElement.classList.remove('hidden');
-      document.body.style.overflow = 'hidden'; 
-    }
 
-    function showSlide(index) {
-      if (!projectImages || projectImages.length === 0) return;
-      currentSlideIndex = index;
-      const offset = -index * 100;
-      sliderImagesContainer.style.transform = `translateX(${offset}%)`;
-
-      Array.from(sliderDotsContainer.children).forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentSlideIndex);
-      });
-      updateSliderControls();
-    }
-    
-    function updateSliderControls() {
-        if (!projectImages || projectImages.length <= 1) {
-            prevSlideButton.classList.add('hidden');
-            nextSlideButton.classList.add('hidden');
-            sliderDotsContainer.classList.add('hidden');
-            stopAutoSlide(); 
-        } else {
-            prevSlideButton.classList.remove('hidden');
-            nextSlideButton.classList.remove('hidden');
-            sliderDotsContainer.classList.remove('hidden');
-            prevSlideButton.disabled = false; // Always enable for looping
-            nextSlideButton.disabled = false; // Always enable for looping
+        function show(index) {
+            currentIndex = index;
+            imagesContainer.style.transform = `translateX(${-index * 100}%)`;
+            Array.from(dotsContainer.children).forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
+            
+            if (images.length <= 1) {
+                prevButton.classList.add('hidden');
+                nextButton.classList.add('hidden');
+            } else {
+                prevButton.classList.remove('hidden');
+                nextButton.classList.remove('hidden');
+            }
         }
+
+        function stop() { clearInterval(intervalId); }
+
+        function startSlider() {
+            if (images.length > 1) {
+                intervalId = setInterval(() => {
+                    show((currentIndex + 1) % images.length);
+                }, 3000);
+            }
+        }
+        
+        function reset() {
+            stop();
+            startSlider();
+        }
+
+        prevButton.addEventListener('click', () => {
+            show((currentIndex - 1 + images.length) % images.length);
+            reset();
+        });
+        nextButton.addEventListener('click', () => {
+            show((currentIndex + 1) % images.length);
+            reset();
+        });
+        sliderElement.addEventListener('mouseenter', stop);
+        sliderElement.addEventListener('mouseleave', reset);
+
+        show(0);
+        if (start) startSlider();
+        
+        return { stop, reset };
     }
 
-    prevSlideButton.addEventListener('click', () => {
-      currentSlideIndex = (currentSlideIndex - 1 + projectImages.length) % projectImages.length;
-      showSlide(currentSlideIndex);
-      resetAutoSlide(); 
-    });
-
-    nextSlideButton.addEventListener('click', () => {
-      currentSlideIndex = (currentSlideIndex + 1) % projectImages.length;
-      showSlide(currentSlideIndex);
-      resetAutoSlide(); 
-    });
-    
-    modalImageSliderElement.addEventListener('mouseenter', stopAutoSlide);
-    modalImageSliderElement.addEventListener('mouseleave', () => {
-        if (!modalElement.classList.contains('hidden') && projectImages.length > 1) {
-            startAutoSlide();
-        }
-    });
+    const projectModalElement = document.getElementById('projectModal');
+    const closeProjectModalButton = document.getElementById('closeModalButton');
+    let projectSliderControls = {};
 
     function openProjectModal(projectId) {
-        populateModal(projectId);
+        const project = projectsData[projectId];
+        if (!project) return;
+
+        projectModalElement.querySelector('#modalProjectTitle').textContent = project.title;
+        projectModalElement.querySelector('#modalProjectDescription').textContent = project.description;
+
+        const techContainer = projectModalElement.querySelector('#modalProjectTech');
+        techContainer.innerHTML = '';
+        project.technologies.forEach(tech => {
+            const span = document.createElement('span');
+            span.className = 'px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text';
+            span.textContent = tech;
+            techContainer.appendChild(span);
+        });
+        
+        const liveLink = projectModalElement.querySelector('#modalProjectLiveLink');
+        const repoLink = projectModalElement.querySelector('#modalProjectRepoLink');
+        liveLink.classList.toggle('hidden', !project.liveLink);
+        if(project.liveLink) liveLink.href = project.liveLink;
+        repoLink.classList.toggle('hidden', !project.repoLink);
+        if(project.repoLink) repoLink.href = project.repoLink;
+
+        projectSliderControls = setupSlider('modalImageSlider', project.images, true);
+        
+        projectModalElement.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
     }
-    
+
     function closeProjectModal() {
-      modalElement.classList.add('hidden');
-      document.body.style.overflow = 'auto'; 
-      stopAutoSlide(); 
+        projectModalElement.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        if (projectSliderControls.stop) projectSliderControls.stop();
     }
-
-    closeModalButton.addEventListener('click', closeProjectModal);
-    modalElement.addEventListener('click', (event) => { 
-      if (event.target === modalElement) {
-        closeProjectModal();
-      }
-    });
     
-    document.querySelectorAll('.view-details-btn').forEach(button => {
-      button.addEventListener('click', () => {
-        const projectId = button.dataset.projectId;
-        openProjectModal(projectId);
-      });
-    });
+    closeProjectModalButton.addEventListener('click', closeProjectModal);
+    projectModalElement.addEventListener('click', e => e.target === projectModalElement && closeProjectModal());
+    document.querySelectorAll('.view-details-btn').forEach(btn => btn.addEventListener('click', () => openProjectModal(btn.dataset.projectId)));
 
-    // --- Certification Modal ---
     const certModalElement = document.getElementById('certModal');
     const closeCertModalButton = document.getElementById('closeCertModalButton');
     let certSliderControls = {};
@@ -1116,12 +916,6 @@
         docLink.classList.toggle('hidden', !cert.docLink);
         if(cert.docLink) docLink.href = cert.docLink;
         
-        const sliderContainer = certModalElement.querySelector('#modalCertImageSlider');
-        sliderContainer.querySelector('#certSliderImagesContainer').classList.add('slider-images-container');
-        sliderContainer.querySelector('#prevCertSlide').classList.add('slider-prev-btn');
-        sliderContainer.querySelector('#nextCertSlide').classList.add('slider-next-btn');
-        sliderContainer.querySelector('#certSliderDots').classList.add('slider-dots-container');
-
         certSliderControls = setupSlider('modalCertImageSlider', cert.images, true);
 
         certModalElement.classList.remove('hidden');
@@ -1137,6 +931,7 @@
     closeCertModalButton.addEventListener('click', closeCertModal);
     certModalElement.addEventListener('click', e => e.target === certModalElement && closeCertModal());
     document.querySelectorAll('.view-cert-btn').forEach(btn => btn.addEventListener('click', () => openCertModal(btn.dataset.certId)));
+
     window.onload = function () {
       document.getElementById('currentYear').textContent = new Date().getFullYear();
       const homeSection = document.getElementById('home');
