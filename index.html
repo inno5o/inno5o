@@ -599,6 +599,7 @@
             <h3 class="text-xl font-bold text-cyber-light-text">Cisco Certified Network Associate (CCNA) - In Progress</h3>
             <p class="text-cyber-dim-text mt-1">Expected completion: August 2025</p>
             <p class="text-cyber-light-text mt-2 text-sm">Focusing on fundamental networking concepts, IP connectivity, security fundamentals, and automation.</p>
+            <button type="button" class="neon-button inline-block text-sm focusable mt-4 view-cert-btn" data-cert-id="ccna">View Practice Labs</button>
           </div>
         </div>
       </div>
@@ -676,6 +677,33 @@
     </div>
   </div>
 
+  <!-- Certification Labs Modal -->
+  <div id="certModal" class="modal fixed inset-0 bg-cyber-dark bg-opacity-90 backdrop-blur-md flex items-center justify-center p-4 hidden z-50">
+    <div class="cyber-card p-6 sm:p-8 rounded-xl max-w-3xl w-full modal-content overflow-y-auto relative shadow-2xl shadow-cyber-blue/30">
+      <button id="closeCertModalButton" aria-label="Close modal" class="absolute top-3 right-3 sm:top-4 sm:right-4 text-cyber-dim-text hover:text-cyber-blue transition-colors text-3xl sm:text-4xl focusable z-10">&times;</button>
+      <h3 id="modalCertTitle" class="text-2xl sm:text-3xl font-bold text-cyber-blue mb-4 sm:mb-6">Certification Labs</h3>
+      <div id="modalCertImageSlider" class="relative mb-6 rounded-lg overflow-hidden bg-cyber-dark/50 aspect-video">
+        <div id="certSliderImagesContainer" class="flex transition-transform duration-500 ease-in-out h-full">
+          <!-- Lab images will be added here by JavaScript -->
+        </div>
+        <button id="prevCertSlide" aria-label="Previous image" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60 focusable disabled:opacity-50 disabled:cursor-not-allowed"><i class="fas fa-chevron-left"></i></button>
+        <button id="nextCertSlide" aria-label="Next image" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60 focusable disabled:opacity-50 disabled:cursor-not-allowed"><i class="fas fa-chevron-right"></i></button>
+        <div id="certSliderDots" class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <!-- Slider dots will be added here by JavaScript -->
+        </div>
+      </div>
+      <div class="prose prose-sm sm:prose-base max-w-none text-cyber-light-text mb-4 sm:mb-6 leading-relaxed">
+        <p id="modalCertDescription">Detailed lab description...</p>
+      </div>
+      <h4 class="text-lg sm:text-xl font-semibold text-cyber-blue mb-2">Skills Demonstrated:</h4>
+      <div id="modalCertSkills" class="flex flex-wrap gap-2 mb-6">
+        <!-- Skills will be added here by JavaScript -->
+      </div>
+      <div class="mt-6 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+        <a id="modalCertDocLink" href="#" download class="neon-button inline-block text-sm focusable hidden text-center">Download Lab Docs</a>
+      </div>
+    </div>
+  </div>
 
   <footer class="text-center text-cyber-dim-text text-sm py-6 border-t border-gray-800">
     <p>&copy; <span id="currentYear">2025</span> Innocent Zivare</p>
@@ -838,6 +866,27 @@
       });
     }
 
+    // --- Certification Modal Data ---
+    const certsData = {
+        'ccna': {
+            title: 'CCNA Practice Labs',
+            images: [
+                'images/ccna_lab_1.png',
+                'images/ccna_lab_2.png',
+                'images/ccna_lab_3.png'
+            ],
+            description: 'A collection of hands-on practice labs completed as part of the CCNA curriculum. These labs were built and tested in simulated environments like Cisco Packet Tracer and GNS3 to reinforce theoretical knowledge with practical application. They cover a range of topics from basic device configuration to complex routing and security protocols.',
+            skills: ['VLANs & Trunking', 'OSPF Configuration', 'Static Routing', 'Subnetting', 'NAT/PAT', 'Access Control Lists (ACLs)', 'Device Hardening'],
+            docLink: 'docs/ccna_lab_documentation.pdf' // Path to your downloadable document
+        }
+    };
+
+    // --- Generic Modal Slider Logic ---
+    // This is a large block of code in the full version.
+    // It is better to copy it from the full code in the Canvas.
+    // The key is that this generic function is now used by BOTH modals.
+
+    // ... The setupSlider function ...
     // --- Project Modal Script ---
     const projectsData = {
       'network-monitoring-tool': {
@@ -1042,6 +1091,52 @@
       });
     });
 
+    // --- Certification Modal ---
+    const certModalElement = document.getElementById('certModal');
+    const closeCertModalButton = document.getElementById('closeCertModalButton');
+    let certSliderControls = {};
+
+    function openCertModal(certId) {
+        const cert = certsData[certId];
+        if (!cert) return;
+
+        certModalElement.querySelector('#modalCertTitle').textContent = cert.title;
+        certModalElement.querySelector('#modalCertDescription').textContent = cert.description;
+
+        const skillsContainer = certModalElement.querySelector('#modalCertSkills');
+        skillsContainer.innerHTML = '';
+        cert.skills.forEach(skill => {
+            const span = document.createElement('span');
+            span.className = 'px-3 py-1 bg-gray-800 rounded-full text-sm text-cyber-light-text';
+            span.textContent = skill;
+            skillsContainer.appendChild(span);
+        });
+        
+        const docLink = certModalElement.querySelector('#modalCertDocLink');
+        docLink.classList.toggle('hidden', !cert.docLink);
+        if(cert.docLink) docLink.href = cert.docLink;
+        
+        const sliderContainer = certModalElement.querySelector('#modalCertImageSlider');
+        sliderContainer.querySelector('#certSliderImagesContainer').classList.add('slider-images-container');
+        sliderContainer.querySelector('#prevCertSlide').classList.add('slider-prev-btn');
+        sliderContainer.querySelector('#nextCertSlide').classList.add('slider-next-btn');
+        sliderContainer.querySelector('#certSliderDots').classList.add('slider-dots-container');
+
+        certSliderControls = setupSlider('modalCertImageSlider', cert.images, true);
+
+        certModalElement.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCertModal() {
+        certModalElement.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+        if (certSliderControls.stop) certSliderControls.stop();
+    }
+
+    closeCertModalButton.addEventListener('click', closeCertModal);
+    certModalElement.addEventListener('click', e => e.target === certModalElement && closeCertModal());
+    document.querySelectorAll('.view-cert-btn').forEach(btn => btn.addEventListener('click', () => openCertModal(btn.dataset.certId)));
     window.onload = function () {
       document.getElementById('currentYear').textContent = new Date().getFullYear();
       const homeSection = document.getElementById('home');
