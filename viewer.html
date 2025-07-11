@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.107/pdf.min.js"></script>
+    <style>
+        body { background-color: #0a192f; color: #ccd6f6; font-family: sans-serif; text-align: center; }
+        #pdf-viewer-container { margin: 20px auto; max-width: 800px; }
+        canvas { display: block; margin: 20px auto; border: 1px solid #00f0ff; }
+        #request-full-doc { margin-top: 40px; padding: 20px; background-color: rgba(0,0,20,0.5); border-radius: 8px;}
+        a { color: #00f0ff; }
+    </style>
+</head>
+<body>
+    <div id="pdf-viewer-container">
+        </div>
+
+    <div id="request-full-doc">
+        <p>You are viewing the first few pages of this document.</p>
+        <p>To receive the full documentation, please <a id="email-link" href="mailto:yrninno@gmail.com?subject=Request for Full Documentation">request it via email</a>.</p>
+    </div>
+    <script>
+        // The worker is needed for PDF.js to run
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.107/pdf.worker.min.js';
+
+const PREVIEW_PAGE_COUNT = 3; // ⬅️ Change this number to show more or fewer pages
+const container = document.getElementById('pdf-viewer-container');
+const emailLink = document.getElementById('email-link');
+
+// Get the PDF file path from the URL (e.g., viewer.html?file=docs/mydoc.pdf)
+const urlParams = new URLSearchParams(window.location.search);
+const pdfPath = urlParams.get('file');
+
+if (pdfPath) {
+    // Update the email link to include the document name
+    emailLink.href = `mailto:yrninno@gmail.com?subject=Request for Full Documentation: ${pdfPath}`;
+
+    // Load the PDF
+    pdfjsLib.getDocument(pdfPath).promise.then(function(pdf) {
+        const totalPages = pdf.numPages;
+        const pagesToRender = Math.min(PREVIEW_PAGE_COUNT, totalPages);
+
+        // Loop through and render only the preview pages
+        for (let pageNum = 1; pageNum <= pagesToRender; pageNum++) {
+            pdf.getPage(pageNum).then(function(page) {
+                const scale = 1.5;
+                const viewport = page.getViewport({ scale: scale });
+
+                // Create a canvas for each page
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                container.appendChild(canvas);
+
+                // Render the page onto the canvas
+                page.render({
+                    canvasContext: context,
+                    viewport: viewport
+                });
+            });
+        }
+    }).catch(function(error) {
+        container.textContent = 'Error: Could not load the PDF document. Please check the file path.';
+        console.error('Error loading PDF:', error);
+    });
+} else {
+    container.textContent = 'No document specified.';
+}
+    </script>
+</body>
+</html>
